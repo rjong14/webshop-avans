@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+ultimo.infortis-themes.com	TRUE	/demo	FALSE	1999999999	currency	CNY
+ultimo.infortis-themes.com	TRUE	/demo	FALSE	1999999999	frontend	4d23757b1a5cfb7b0829462e1707263f
+
