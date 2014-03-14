@@ -1,5 +1,5 @@
 <?php
-	include 'database.class.php';
+	include_once 'database.class.php';
 
 	// Created a class called "Queries"
 	class Queries {
@@ -9,6 +9,12 @@
 			$result = $this->getInstance()->selectQuery("SELECT * FROM menu", null);
 			return $result;
 		}
+
+		public function getxBoxGames() {
+			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prCategorie = ?", array('xbox'));
+			return $result;
+		}
+
 
 		// Created a function to make one instance of the "DB" class
 		public function getInstance(){
