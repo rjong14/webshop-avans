@@ -56,367 +56,36 @@ include 'header.php'
                 <div class="clear"></div>
                 
                 <div class="products_list catalog">                    
-                    <article>
-			<div class="grid_3">
-			    <img class="sale" src="img/sale.png" alt="Sale">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product2.png" alt="Product 2" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
+<?php
+                echo '<article>';
+			echo '<div class="grid_3">';
+			    echo '<div class="prev">';
+				echo '<a href="product_page.html"><img src="img/content/' .'image'. '" alt="Product 2" title=""></a>';
+			    echo '</div><!-- .prev -->';
+			echo '</div><!-- .grid_3 -->';
 				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
+			echo '<div class="grid_6">';
+			   echo '<div class="entry_content">';
+				echo '<a href="product_page.html"><h3 class="title">' .'title'. '</h3></a>';
+                echo '<p>'. 'info' .'<a class="more" href="'.'title+.php'.'">Learn more</a></p>';
+                  echo '</div><!-- .entry_content -->';
                             
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
+                    echo '<div class="price">';
+                                echo'<div class="price_old">$1,725.00</div>';
+				echo'$1,550.00';
+			    echo'</div>';
                                 
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
 				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
+                           echo '<div class="cart">';
+                                echo '<a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>';
+                            echo '</div><!-- .cart -->';
+			echo '</div><!-- .grid_6 -->';
+			echo '<div class="clear"></div>';
+		    echo '</article>';
                     
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product1.png" alt="Product 1" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product3.png" alt="Product 3" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product5.png" alt="Product 5" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product6.png" alt="Product 6" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <img class="sale" src="img/sale.png" alt="Sale">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product4.png" alt="Product 4" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product8.png" alt="Product 8" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product9.png" alt="Product 9" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product12.png" alt="Product 12" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
-                    
-                    <article>
-			<div class="grid_3">
-			    <div class="prev">
-				<a href="product_page.html"><img src="img/content/product10.png" alt="Product 10" title=""></a>
-			    </div><!-- .prev -->
-			</div><!-- .grid_3 -->
-				
-			<div class="grid_6">
-			    <div class="entry_content">
-				<a href="product_page.html"><h3 class="title">handmade Cut Emerald Ring</h3></a>
-                                <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque. <a class="more" href="product_page.html">Learn more</a></p>
-                            </div><!-- .entry_content -->
-                            
-                            <div class="price">
-                                <div class="price_old">$1,725.00</div>
-				$1,550.00
-			    </div>
-                                
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-			    </div>
-				
-                            <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span> Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
-			</div><!-- .grid_6 -->
-			<div class="clear"></div>
-		    </article>
+            echo '<article>';
+    
+    ?>
                     
                     <div class="clear"></div>
                 </div><!-- .products_list -->
@@ -436,6 +105,8 @@ include 'header.php'
 		    </ul>
                 </div><!-- .pagination -->
                 <p class="pagination_info">Displaying 1 to 12 (of 100 products)</p>
+                
+                
                 
                 <div class="clear"></div>
             </div><!-- #content -->
