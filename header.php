@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+
+<?php
+include 'queries.php';
+$query = new Queries();
+$menu = $query->getMenuItems();
+?>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -106,11 +113,12 @@
                     <div class="bg-menu-select"></div>
                     <a class="menu-select" href="#">Catalog</a>
                     <ul>
-                        <li class="curent"><a href="index.php">Home</a></li>
-<?php
-echo '<li><a href="catalog_grid.php">menuItem1</a</li>';
-?>
-
+                    <?php
+                    foreach($menu as $item)
+                    {
+                        echo '<li><a href="' . $item['link'] .  '.php">' . $item['label'] . '</a</li>';
+                    }
+                    ?>
                     </ul>
                 </nav><!-- .primary -->
             </div><!-- .grid_9 -->
