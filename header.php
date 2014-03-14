@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include 'queries.php';
+include_once 'queries.php';
 $query = new Queries();
 $menu = $query->getMenuItems();
 ?>
