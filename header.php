@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-
 <?php
+session_start();
 include_once 'queries.php';
-$query = new Queries();
-$menu = $query->getMenuItems();
+$database = new Queries();
+$menu = $database->getMenuItems();
 ?>
 
 <html>
@@ -41,7 +40,7 @@ $menu = $query->getMenuItems();
                     <a class="menu-open" href="#">Menu</a>
                     <ul>
                         <li class="current"><a href="#">My Account</a></li>
-                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="shopping_cart.php">Shopping cart</a></li>
                         <li><a href="login.php">Log In</a></li>
                         <li><a href="login.php">Sign Up</a></li>
                     </ul>
@@ -62,7 +61,17 @@ $menu = $query->getMenuItems();
             <div class="grid_9">
                 <div class="top_header">
                     <div class="welcome">
-                        Welcome visitor you can <a href="login.php">login</a> or <a href="login.php">create an account</a>.
+                        <?php
+                            if(isset($_SESSION['username']))
+                            {
+                                echo 'Welcome ' . $_SESSION['username'];
+                            }
+                            else
+                            {
+                                echo 'Welcome visitor you can <a href="login.php">login</a> or <a href="login.php">create an account</a>.';
+                            }
+                        ?>
+                        
                     </div><!-- .welcome -->
 
                     <ul id="cart_nav">
@@ -116,7 +125,7 @@ $menu = $query->getMenuItems();
                     <?php
                     foreach($menu as $item)
                     {
-                        echo '<li><a href="' . $item['link'] .  '.php">' . $item['label'] . '</a</li>';
+                        echo '<li><a href="' . $item['link'] .  '.php">' . $item['label'] . '</a></li>';
                     }
                     ?>
                     </ul>

@@ -636,6 +636,37 @@ input[type="submit"] {
     text-align: center;
     text-transform: uppercase;
 }
+input[type="submit"].delete {
+    background-image: url(../img/delete.png);
+    background-position: top;
+
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    padding: 0px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    vertical-align: top;
+    margin-top: -5px;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+input[type="submit"].delete:hover {
+    background-image: url(../img/delete.png);
+    background-position: top;
+
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    padding: 0px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    vertical-align: top;
+    text-transform: uppercase;
+}
+
 button:hover,
 input[type="submit"]:hover {
     background: #80a6d3;
@@ -663,6 +694,26 @@ input[type="submit"]:active {
 /* Input */
 input[type="email"],
 input[type="text"] {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 19px;
+    -moz-border-radius: 19px;
+    -khtml-border-radius: 19px;
+    behavior: url(PIE.html);
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
+    height: 38px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    //height: 28px;
+    //padding: 10px 10px 0 10px;
+    color: #777;
+    width: 100%
+}
+input[type="password"] {
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 19px;
@@ -3117,9 +3168,12 @@ table.cart_product .price {
     width: 100px;
 }
 table.cart_product .qty {
-    width: 80px;
+    width: 100px;
 }
 table.cart_product .subtotal {
+    width: 100px;
+}
+table.cart_product .category {
     width: 100px;
 }
 table.cart_product .close {
@@ -3154,7 +3208,7 @@ table.cart_product td.name {
     text-align: left;
 }
 table.cart_product td.qty {
-    padding: 20px 0 0 0;
+    padding: 30px 0 0 0;
 }
 table.cart_product td.qty input {
     color: #707070;
@@ -3165,6 +3219,7 @@ table.cart_product .cart_but {
     border-right: 0 none;
     padding: 18px 0 ;
 }
+
 table.cart_product .cart_but a {
     color: #7698c1;
     display: block;
@@ -3258,6 +3313,13 @@ select.bottom-index,
     width: 100%;
 }
 .bottom_block.total .subtotal td {
+    border: 0 none;
+    border-collapse: collapse;
+    height: 30px;
+    padding: 0;
+    vertical-align: top;
+}
+.bottom_block.total .category td {
     border: 0 none;
     border-collapse: collapse;
     height: 30px;
