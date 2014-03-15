@@ -19,6 +19,18 @@
 			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruikers where gebruikersnaam = ? and wachtwoord = ?", array($username, $password));
 			return $result;
 		}
+		public function checkUsername($username)
+		{
+			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruikers where gebruikersnaam = ?", array($username));
+			return $result;
+		}
+		public function insertUser($username, $password, $firstname, $lastname, $adress, $city, $zip, $email)
+		{
+
+			$result = $this->getInstance()->executeQuery("INSERT INTO  `webshop`.`gebruikers` (`id` ,`gebruikersnaam` ,`wachtwoord` ,`voornaam` ,`achternaam` ,`adres` ,`woonplaats` ,`postcode` ,`email` ,`isAdmin`)
+			VALUES (NULL ,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  '0');", array($username, $password, $firstname, $lastname, $adress, $city, $zip, $email));
+			return $result;
+		}
 		public function getProductInfo($id)
 		{
 			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where id = ?", array($id));

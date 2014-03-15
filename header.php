@@ -42,7 +42,7 @@ $menu = $database->getMenuItems();
                         <li class="current"><a href="#">My Account</a></li>
                         <li><a href="shopping_cart.php">Shopping cart</a></li>
                         <li><a href="login.php">Log In</a></li>
-                        <li><a href="login.php">Sign Up</a></li>
+                        <li><a href="signup.php">Sign Up</a></li>
                     </ul>
                 </nav>
             </div><!-- .grid_9 -->
@@ -68,7 +68,7 @@ $menu = $database->getMenuItems();
                             }
                             else
                             {
-                                echo 'Welcome visitor you can <a href="login.php">login</a> or <a href="login.php">create an account</a>.';
+                                echo 'Welcome visitor you can <a href="login.php">login</a> or <a href="signup.php">create an account</a>.';
                             }
                         ?>
                         

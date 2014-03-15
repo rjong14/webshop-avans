@@ -1,15 +1,7 @@
 <?php
 include 'header.php'
 ?>
-    
-    <div class="breadcrumbs">
-        <div class="container_12">
-            <div class="grid_12">
-                 <a href="index.html">Home</a><span></span><a href="#">Category</a><span></span><span class="current">This page</span>
-            </div><!-- .grid_12 -->
-        </div><!-- .container_12 -->
-    </div><!-- .breadcrumbs -->
-    
+
     <section id="main">
         <div class="container_12">
             <div id="content" class="grid_12">
@@ -28,19 +20,7 @@ include 'header.php'
 			    </div>
 			</div><!-- .preview -->
                         
-                        <div class="next_prev">
-			    <a id="img_prev" class="arows" href="#"><span>Prev</span></a>
-			    <a id="img_next" class="arows" href="#"><span>Next</span></a>
-			</div><!-- .next_prev -->
-
-			<ul class="small_img clearfix" id="thumblist">
-			    <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './img/content/product1.png',largeimage: './img/content/product1.png'}"><img src='img/content/product1.png' alt=""></a></li>
-			    <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './img/content/product2.png',largeimage: './img/content/product2.png'}"><img src='img/content/product2.png' alt=""></a></li>
-			    <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './img/content/product3.png',largeimage: './img/content/product3.png'}"><img src='img/content/product3.png' alt=""></a></li>
-			    <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './img/content/product4.png',largeimage: './img/content/product4.png'}"><img src='img/content/product4.png' alt=""></a></li>
-			    <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './img/content/product5.png',largeimage: './img/content/product5.png'}"><img src='img/content/product5.png' alt=""></a></li>
-			</ul><!-- .small_img -->
-
+     
 			<div id="pagination"></div>
 		    </div><!-- .grid_5 -->
                     
@@ -192,25 +172,6 @@ include 'header.php'
                                 <form class="add_comments">
 				    <h4>Write Your Own Review</h4>
 
-					<div class="evaluation">
-					    <div class="quality">
-						Quality<sup>*</sup>
-						<input class="niceRadio" type="radio" name="quality" value="1"><span class="eva_num">1</span>
-						<input class="niceRadio" type="radio" name="quality" value="2"><span class="eva_num">2</span>
-						<input class="niceRadio" type="radio" name="quality" value="3"><span class="eva_num">3</span>
-						<input class="niceRadio" type="radio" name="quality" value="4"><span class="eva_num">4</span>
-						<input class="niceRadio" type="radio" name="quality" value="5"><span class="eva_num">5</span>
-					    </div>
-					    <div class="price">
-						Price<sup>*</sup>
-						<input class="niceRadio" type="radio" name="price" value="1"><span class="eva_num">1</span>
-						<input class="niceRadio" type="radio" name="price" value="2"><span class="eva_num">2</span>
-						<input class="niceRadio" type="radio" name="price" value="3"><span class="eva_num">3</span>
-						<input class="niceRadio" type="radio" name="price" value="4"><span class="eva_num">4</span>
-						<input class="niceRadio" type="radio" name="price" value="5"><span class="eva_num">5</span>
-					    </div>
-					    <div class="clear"></div>
-					</div><!-- .evaluation -->
                                         
                                         <div class="nickname">
 					    <strong>Nickname</strong><sup>*</sup><br>
@@ -261,117 +222,7 @@ include 'header.php'
                             </div><!-- .grid_2 -->
                         </div><!-- .c_header -->
 
-                        <div class="related_list">
-                            <ul id="listing" class="products">
-                                <li>
-                                    <article class="grid_3 article">
-                                        <img class="sale" src="img/sale.png" alt="Sale">
-                                        <div class="prev">
-                                            <a href="product_page.html"><img src="img/content/product1.png" alt="Product 1" title=""></a>
-                                        </div><!-- .prev -->
-                        
-                                        <h3 class="title">handmade Emerald Cut<br> Emerald Ring</h3>
-                                        <div class="cart">
-                                            <div class="price">
-                                                <div class="vert">
-                                                    $550.00
-                                                    <div class="price_old">$725.00</div>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="compare"></a>
-                                            <a href="#" class="wishlist"></a>
-                                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                                        </div><!-- .cart -->
-                                    </article><!-- .grid_3.article -->
-                                </li>
-                                
-                                <li>
-                                    <article class="grid_3 article">
-                                        <div class="prev">
-                                             <a href="product_page.html"><img src="img/content/product2.png" alt="Product 2" title=""></a>
-                                        </div><!-- .prev -->
-                        
-                                        <h3 class="title">beautiful Valentine And Engagement</h3>
-                                        <div class="cart">
-                                            <div class="price">
-                                                <div class="vert">
-                                                    $550.00
-                                                    <div class="price_old">$725.00</div>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="compare"></a>
-                                            <a href="#" class="wishlist"></a>
-                                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                                        </div><!-- .cart -->
-                                    </article><!-- .grid_3.article -->
-                                </li>
-                                
-                                <li>
-                                    <article class="grid_3 article">
-                                        <img class="sale" src="img/new.png" alt="New">
-                                        <div class="prev">
-                                            <a href="product_page.html"><img src="img/content/product3.png" alt="Product 3" title=""></a>
-                                        </div><!-- .prev -->
-                        
-                                        <h3 class="title">Emerald Cut Emerald Ring</h3>
-                                        <div class="cart">
-                                            <div class="price">
-                                                <div class="vert">
-                                                    $550.00
-                                                    <div class="price_old">$725.00</div>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="compare"></a>
-                                            <a href="#" class="wishlist"></a>
-                                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                                        </div><!-- .cart -->
-                                    </article><!-- .grid_3.article -->
-                                </li>
-                                
-                                <li>
-                                    <article class="grid_3 article">
-                                        <div class="prev">
-                                            <a href="product_page.html"><img src="img/content/product4.png" alt="Product 4" title=""></a>
-                                        </div><!-- .prev -->
-                        
-                                        <h3 class="title">Diamond Necklaces and Pendants</h3>
-                                        <div class="cart">
-                                            <div class="price">
-                                                <div class="vert">
-                                                    $550.00
-                                                    <div class="price_old">$725.00</div>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="compare"></a>
-                                            <a href="#" class="wishlist"></a>
-                                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                                        </div><!-- .cart -->
-                                    </article><!-- .grid_3.article -->
-                                </li>
-                    
-                                <li>
-                                    <article class="grid_3 article">
-                                        <div class="prev">
-                                            <a href="product_page.html"><img src="img/content/product5.png" alt="Product 5" title=""></a>
-                                        </div><!-- .prev -->
-                        
-                                        <h3 class="title">Emerald Diamond Solitaire</h3>
-                                        <div class="cart">
-                                            <div class="price">
-                                                <div class="vert">
-                                                    $550.00
-                                                    <div class="price_old">$725.00</div>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="compare"></a>
-                                            <a href="#" class="wishlist"></a>
-                                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                                        </div><!-- .cart -->
-                                    </article><!-- .grid_3.article -->
-                                </li>
-                            </ul><!-- #listing -->
-                         </div><!-- .brands_list -->
-                </div><!-- .related -->
+                      
                     
                 <div class="clear"></div>
             </div><!-- #content -->

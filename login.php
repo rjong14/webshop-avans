@@ -8,25 +8,26 @@ $database = new Queries();
             <div id="content" class="grid_12">
                 <header>
                     <h1 class="page_title">Login or Create an Account</h1>
-                </header>
-                    
-                <article>
-                	
-
-
-
-                	<form action ="login.php"method="post">
-                    <div class="grid_6 new_customers">
-             <?php 
-             if(!isset($_SESSION['username']))
+                     <?php 
+             if(isset($_SESSION['username']))
              {
-             	echo '<h2>New Customers</h2>
+             	echo '<p style="font-size:20px">You are already logged in ' . $_SESSION['username'] . '</p>';
+             	echo '<form action="login.php" method="post">';
+             	echo '<input type="submit" name="logout" value="log out">';
+             	echo '</form>';
+			 } else {
+			 	
+			 	echo '<br><h2>New Customers</h2>
 					  <p>By creating an account with our store, you will be able to move through the checkout process faster, 
 					  store multiple shipping addresses, view and track your orders in your account and more.</p>';
-			 } else {
-			 	echo '<p>You are already logged in ' . $_SESSION['username'] . '</p>';
 			 }
              ?>
+                </header>
+                
+                <article>
+                	<form action ="login.php"method="post">
+                    <div class="grid_6 new_customers">
+             
 
 			
 			<div class="clear"></div>
@@ -34,12 +35,14 @@ $database = new Queries();
 			 	<?php 
 			 	 if(!isset($_SESSION['username']))
 			 	 {
-			 	 	echo '<input type="submit" name="register" value="register">';
+			 	 	 echo '</form>';
+			 	 	echo '<form action="signup.php" method="POST">';
+			 	 	echo '<input type="submit" name="gotoregister" value="register">';
+			 	 	echo '</form>';
+
+
 			 	 }
-			 	 else
-			 	 {
-			 	 	echo '<input type="submit" name="logout" value="log out">';
-			 	 }
+			 	 
 			 	?>								
 				
     

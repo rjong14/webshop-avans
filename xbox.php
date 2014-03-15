@@ -6,15 +6,6 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 
 ?>
 
-
-    <div class="breadcrumbs">
-        <div class="container_12">
-            <div class="grid_12">
-                 <a href="index.html">Home</a><span></span><a href="#">Category</a><span></span><span class="current">This page</span>
-            </div><!-- .grid_12 -->
-        </div><!-- .container_12 -->
-    </div><!-- .breadcrumbs -->
-    
     <section id="main">
         <div class="container_12">
             <div id="content" class="grid_9">

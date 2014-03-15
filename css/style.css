@@ -635,6 +635,21 @@ input[type="submit"] {
     text-align: center;
     text-transform: uppercase;
 }
+input[type="button"] {
+    background: #7698c1;
+    border-radius: 19px;
+    -moz-border-radius: 19px;
+    -khtml-border-radius: 19px;
+    behavior: url(PIE.html);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font: bold 13px/40px 'PT Sans', Arial, Verdana, sans-serif;
+    height: 38px;
+    padding: 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
 input[type="submit"].delete {
     background-image: url(../img/delete.png);
     background-position: top;
@@ -703,7 +718,7 @@ input[type="text"] {
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
-    height: 38px;
+    height: 30px;
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 0 10px;
@@ -723,7 +738,7 @@ input[type="password"] {
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
-    height: 38px;
+    height: 30px;
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 0 10px;
