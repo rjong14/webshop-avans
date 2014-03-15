@@ -47,30 +47,10 @@
                 </div><!-- .grid_3 -->
             </div><!-- .container_12 -->
             <div class="clear"></div>
-            <div class="newsletter-payments">
-                <div class="container_12">
-                    <div class="grid_12">
-                        <div class="bg-newsletter-payments">
-                            <div class="newsletter">
-                                <div class="newsletter-text">
-                                    <div class="icon-mail">Newsletter</div>
-                                    Subscribe to notifications about discounts from our store
-                                </div>
-                                <form>
-                                    <input type="submit" value="">
-                                    <input type="email" name="newsletter" value="" placeholder="Enter your email address...">
-                                </form>
-                            </div><!-- .newsletter -->
 
-                            <div class="payments">
-                                <img src="img/payments.png" alt="Payments">
-                            </div><!-- .payments -->
-                        </div><!-- .bg-newsletter-payments -->
                     </div>
                     <div class="clear"></div>
                 </div><!-- .container_12 -->
-            </div><!-- .newsletter-payments -->
-            <div class="clear"></div>
         </div><!-- .footer_navigation -->
 
         <div class="footer_info">

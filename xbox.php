@@ -21,27 +21,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                 <h1 class="page_title">Product List</h1>
                  
                 <div class="options">
-                    <div class="show">
-			<span>Show</span>
-			<select>
-			    <option>1</option>
-			    <option>2</option>
-			    <option>3</option>
-			    <option>4</option>
-			    <option>5</option>
-			    <option>6</option>
-			    <option>7</option>
-			    <option>8</option>
-			    <option>9</option>
-			    <option>10</option>
-			    <option>11</option>
-			    <option>12</option>
-			</select>
-			    
-			<span>per page</span>
-		    </div><!-- .show -->
-                    
-                <div class="sort">
+                  <div class="sort">
 			<span>Sort By</span>
 			<select>
 			    <option>Price</option>
@@ -52,10 +32,6 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 			<a class="sort_up" href="#">&#8593;</a>
 		    </div><!-- .sort -->
                     
-		    <div class="grid-list">
-			<a class="grid" href="catalog_grid.html"><span></span></a>
-			<a class="list current" href="index.html"><span></span></a>
-		    </div><!-- .grid-list -->
 		    
                 </div><!-- .options -->
                 <div class="clear"></div>
@@ -132,12 +108,9 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 
 		    <nav class="right_menu">
 			<ul>
-			    <li><a href="#">Home</a></li>
-			    <li><a href="#">Wedding</a></li>
-			    <li class="current"><a href="#">Rings</a></li>
-			    <li><a href="#">Necklaces</a></li>
-			    <li><a href="#">Earrings</a></li>
-			    <li><a href="#">Bracelets</a></li>
+			    <li><a href="#">PC</a></li>
+			    <li><a href="#">Playstation</a></li>
+			    <li class="current"><a href="#">XBOX</a></li>
 			</ul>
 		    </nav><!-- .right_menu -->
                 </aside><!-- #categories_nav -->
