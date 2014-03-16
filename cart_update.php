@@ -43,7 +43,6 @@ if(isset($_POST["type"]) && $_POST["type"]=='add')
 				$_SESSION["products"] = $new_product;
 		}
 	}
-	print_r($_SESSION["products"]);
 	header('Location:'.$return_url);
 }
 if(isset($_GET["removep"]) && isset($_GET["return_url"]) && isset($_SESSION["products"]))

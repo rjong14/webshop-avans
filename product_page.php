@@ -1,81 +1,70 @@
 <?php
-include 'header.php'
+include 'header.php';
+$database = new Queries();
+$product = $database->getProductInfo($_GET['productid']);
+$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+
 ?>
 
     <section id="main">
         <div class="container_12">
             <div id="content" class="grid_12">
                 <header>
-                    <h1 class="page_title">handmade Cut Emerald Ring</h1>
+                    <h1 class="page_title"> <?php echo  $product[0]['prNaam']  ?></h1>
                 </header>
                     
                 <article class="product_page negative-grid">
                     <div class="grid_5 img_slid" id="products">
-			<img class="sale" src="img/sale.png" alt="Sale">
+			
 			<div class="preview slides_container">
 			    <div class="prev_bg">
-				<a href="img/content/product1.png" class="jqzoom" rel='gal1' title="">
-				    <img src="img/content/product1.png" alt="Product 1" title="" style="width: 100%">
+				<?php 
+					echo '<a href="' . $product[0]['prImage'] . '" class="jqzoom" rel="gal1" title="">';
+				
+				    echo '<img src="' . $product[0]['prImage'] . '" alt="Product 1" title="" style="width: 100%">';
+				    ?>
 				</a>
 			    </div>
 			</div><!-- .preview -->
                         
-     
-			<div id="pagination"></div>
+     		<br><br><br>
+			
 		    </div><!-- .grid_5 -->
                     
-                    <div class="grid_7">
+            <div class="grid_7">
 			<div class="entry_content">
-                            <div class="soc">
-				<img src="img/soc.png" alt="Soc">
-			    </div><!-- .soc -->
-                            
-			    <div class="review">
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a class="plus" href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<span><strong>3</strong> REVIEW(S)</span>
-                                <span class="separator">|</span>
-			        <a class="add_review" href="#">ADD YOUR REVIEW</a>
-			    </div>
-                            
-			    <p>Duis mollis, augue rutrum viverra pellentesque, odio lacus feugiat neque, eget pulvinar enim dui vitae enim. Suspendisse adipiscing sollicitudin scelerisque.  Vivamus mattis lacinia nulla vel adipiscing. Phasellus et lacus at eros scelerisque auctor eu eu nisl.</p>
-                            
-                            <div class="ava_price">
-                                <div class="price">
-                                    <div class="price_old">$1,725.00</div>
-                                    $1,550.00
-				</div><!-- .price -->
+                             
+			  
+                <?php         
+			    echo '<p>' . $product[0]['prBeschrijving'] . '</p>';
+                 ?>
+                 <div class="ava_price">
+                    <div class="price">
+                     <?php echo $product[0]['prPrijs']; ?>
+					</div><!-- .price -->
                                 
-				<div class="availability_sku">
+					<div class="availability_sku">
 				    <div class="availability">
 					Availability: <span>In stock</span>
 				    </div>
-				    <div class="sku">
-					SKU: <span>Candles OV</span>
-				    </div>
-				</div><!-- .availability_sku -->
+				    
+					</div><!-- .availability_sku -->
                                 <div class="clear"></div>
-			    </div><!-- .ava_price -->
-                            
-                            <div class="parameter_selection">
-                                <select>
-                                    <option>Select a size</option>
-                                    <option>Select a size</option>
-                                </select>
-                                <select>
-                                    <option>Choose a material</option>
-                                    <option>Choose a material</option>
-                                </select>
-			    </div><!-- .parameter_selection -->
+			   		</div><!-- .ava_price -->
+			   		<form action="cart_update.php" method="POST">
+                    Quantity <input type="text" name="product_qty" style="width: 40px">
+                    <?php
+		              echo '<input type="hidden" name="product_id" value="'.$product[0]['id'].'" />
+		            		<input type="hidden" name="type" value="add" />
+							<input type="hidden" name="return_url" value="'.$current_url.'" />';
+		            ?>
+                    <br>
+                    <br>
 
-			    <div class="cart">
-                                <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title="">Add to Cart</a>
-                                <a href="#" class="wishlist"><span></span>Add to Compare</a>
-                                <a href="#" class="compare"><span></span>Add to Compare</a>
-                            </div><!-- .cart -->
+			    	<div class="cart">
+			    	<button class="add_to_cart">Add To Cart</button>					
+                 </div><!-- .cart -->
+             </form>
 
 			</div><!-- .entry_content -->
 		    </div><!-- .grid_7 -->
