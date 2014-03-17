@@ -10,8 +10,8 @@
 			return $result;
 		}
 
-		public function getxBoxGames() {
-			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prCategorie = ?", array('xbox'));
+		public function getCategoryGames($category) {
+			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prCategorie = ?", array($category));
 			return $result;
 		}
 		public function checkLogin($username, $password)
