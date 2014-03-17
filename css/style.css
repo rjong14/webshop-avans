@@ -635,6 +635,7 @@ input[type="submit"] {
     text-align: center;
     text-transform: uppercase;
 }
+
 input[type="button"] {
     background: #7698c1;
     border-radius: 19px;
