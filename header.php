@@ -92,7 +92,6 @@ $menu = $database->getMenuItems();
                                     <a title="close" class="close" href="#"></a>
                                     <div class="clear"></div>
                                 </li>
-
                                 <li>
                                     <a href="product_page.php" class="prev_cart"><div class="cart_vert"><img src="img/content/cart_img2.png" alt="Product 2" title=""></div></a>
                                     <div class="cont_cart">
@@ -110,8 +109,8 @@ $menu = $database->getMenuItems();
                         </li>
                     </ul><!-- .cart_nav -->
 
-                    <form class="search">
-                        <input type="submit" class="search_button" value="">
+                    <form class="search" action="search.php">
+                        <input type="submit" class="search_button" value=""></a>
                         <input type="text" name="search" class="search_form" value="" placeholder="Search entire store here...">
                     </form><!-- .search -->
                 </div><!-- .top_header -->

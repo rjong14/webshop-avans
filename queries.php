@@ -19,6 +19,11 @@
 			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruikers where gebruikersnaam = ? and wachtwoord = ?", array($username, $password));
 			return $result;
 		}
+		public function searchResult($name)
+		{
+				$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prNaam LIKE concat('%',?,'%')", array($name));
+				return $result;
+		}
 		public function checkUsername($username)
 		{
 			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruikers where gebruikersnaam = ?", array($username));

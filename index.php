@@ -6,33 +6,19 @@ include 'header.php';
         <ul id="slider">
             <li>
                 <div class="slid_content">
-                    <h2 style="color: #FFFFFF;">WATCH DOGS</h2>
-                    <p style="color: #FFFFFF;">The hardest part is over – you’ve found the love of 
-                    your life. Now is the time to find the perfect diamond 
-                    engagement ring and plan a beautiful proposal.</p>
-                    <a class="buy_now" href="#">Buy now</a>
                 </div><!-- .slid_content -->
                 <img src="img/content/gslid-1.png" alt="Slid 1" title="">
             </li>
 
             <li>
                 <div class="slid_content">
-                    <h2 style="color: #FFFFFF;">Precious Metals</h2>
-                    <p style="color: #FFFFFF;">There’s no gift quite like diamond jewelry. Whether 
-                    you’re looking for a diamond ring, bracelet, 
-                    earrings or necklace, we’ll give you tips.</p>
-                    <a class="buy_now" href="#">Buy now</a>
+                 
                 </div><!-- .slid_content -->
                 <img src="img/content/gslid-2.png" alt="Slid 2" title="">
             </li>
 
             <li>
-                <div class="slid_content">
-                    <h2 style="color: #FFFFFF;">Handmade jewelry</h2>
-                    <p style="color: #FFFFFF;">Congratulations on your engagement. As you 
-                    begin to plan the many details of your wedding 
-                    day, don’t forget the rings!</p>
-                    <a class="buy_now" href="#">Buy now</a>
+                <div class="slid_content">  
                 </div><!-- .slid_content -->
                 <img src="img/content/gslid-3.png" alt="Slid 3" title="">
             </li>
@@ -229,9 +215,7 @@ include 'header.php';
                     <div class="bottom_block about_as">
                         <h3>About Us</h3>
                         <div class="about_as_content">
-                            <p>Lorem ipsum, libero et luctus molestie, turpis mi sagittis nisl, a scelerisque leo nulla et lectus pendisse dictum posuere elit, in congue nisl varius lentesque a tellus eget quam varius aliquet.</p>
-                            <p>Pellentesque tristique, libero et luctus molestie, turpis a scelerisque leo nulla et lectus pendisse dictum posuere elit. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                            <p>In congue nisl varius quis lentesque a tellus eget quam varius aliquet. Vel lobortis gravida.  Many desktop publishing packages and web page .</p>
+                            <p>Deze webshop is gebouwd door Louis Hol en Rick de Jong, dit in opdracht van Avans hogeschool</p>
                         </div>
                     </div><!-- .about_as -->
                 </div><!-- .grid_6 -->
@@ -241,18 +225,18 @@ include 'header.php';
                         <h3>News</h3>
                         <ul>
                             <li>
-                                <time datetime="2012-03-03">3 january 2012</time>
-                                <a href="#">Fermentum parturient lacus tristique habitant nullam morbi et odio nibh mus dictum tellus erat.</a>
+                                <time datetime="2012-03-03">19 Maart 2014</time>
+                                <p>GTA VI vanaf volgende week expliciet verkrijgbaar, alleen bij onze webshop!</p>
                             </li>
 
                             <li>
-                                <time datetime="2012-02-03">2 january 2012</time>
-                                <a href="#">Cras ac hendrerit dui. Duis lacus ligula, luctus ac tristique eget, posuere id erat. Many desktop publishing packages and web page editors now use.</a>
+                                <time datetime="2012-02-03">15 Maart 2014</time>
+                                <p>Vanaf morgen 90% korting op alle xBox spellen</p>
                             </li>
 
                             <li>
-                                <time datetime="2012-01-03">1 january 2012</time>
-                                <a href="#">Lorem ipsum, libero et luctus molestie, turpis mi sagittis nisl, a scelerisque leo nulla et lectus.</a>
+                                <time datetime="2012-01-03">1 Maart 2014</time>
+                                <p>2 halen 3 betalen vanaf morgen!</p>
                             </li>
                         </ul>
                     </div><!-- .news -->

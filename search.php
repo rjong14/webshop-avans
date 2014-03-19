@@ -1,15 +1,19 @@
 <?php
+$search = "";
+if(isset($_GET['search']))
+{
+	$search=$_GET['search'];
+}
 include 'header.php';
 $database = new Queries();
-$products = $database->getCategoryGames("playstation");
+$products = $database->searchResult($search);
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>
-
     <section id="main">
         <div class="container_12">
             <div id="content" class="grid_9">
-                <h1 class="page_title">Product List Playstion : </h1>
+                <h1 class="page_title">Search results</h1>
                  
                 <div class="options">
                   <div class="sort">
@@ -21,44 +25,43 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                 
                 <div class="products_list catalog">           
                 <?php 
-                if($products != false)
-                {
-		                foreach($products as $product)
-						{
-								echo '
-							  	<article>
-								<form method="post" action="cart_update.php">
-								<div class="grid_3">
-					  			<div class="prev">
-									<a href="product_page.php?productid=' .$product["id"]. '"><img src="' . $product['prImage'] . '" alt="Product 2" title=""></a>
-					   			</div><!-- .prev -->
-								</div><!-- .grid_3 -->
-						
-								<div class="grid_6">
-					 			 <div class="entry_content">
-									<h3 class="title">' . $product['prNaam'] . '</h3>
-		               				 <p>'. $product['prBeschrijving'] .'</p>
-		                  		</div><!-- .entry_content -->
-		                            
-		                   	 	<div class="price">
-		                    	€ ' . $product['prPrijs'] . ',
-					    		</div>
-					    		
-					    		Quantity <input type="text" name="product_qty" style="width: 40px">
-					    		<div class="cart">
+                if($products != false) {
+		            foreach($products as $product)
+					{
+							echo '
+						  	<article>
+							<form method="post" action="cart_update.php">
+							<div class="grid_3">
+				  			<div class="prev">
+								<a href="product_page.php?productid=' .$product["id"]. '"><img src="' . $product['prImage'] . '" alt="Product 2" title=""></a>
+				   			</div><!-- .prev -->
+							</div><!-- .grid_3 -->
+					
+							<div class="grid_6">
+				 			 <div class="entry_content">
+								<h3 class="title">' . $product['prNaam'] . '</h3>
+		           				 <p>'. $product['prBeschrijving'] .'</p>
+		              		</div><!-- .entry_content -->
+		                        
+		               	 	<div class="price">
+		                	€ ' . $product['prPrijs'] . ',
+				    		</div>
+				    		
+				    		Quantity <input type="text" name="product_qty" style="width: 40px">
+				    		<div class="cart">
 
-					   			 <button class="add_to_cart">Add To Cart</button>
+				   			 <button class="add_to_cart">Add To Cart</button>
 
-								</div><!-- .cart -->
-		            			<input type="hidden" name="product_id" value="'.$product['id'].'" />
-		            			<input type="hidden" name="type" value="add" />
-								<input type="hidden" name="return_url" value="'.$current_url.'" />
-								</div><!-- .grid_6 -->
-								<div class="clear"></div>
-								</form>
-				    			</article>';
-						}
+							</div><!-- .cart -->
+		        			<input type="hidden" name="product_id" value="'.$product['id'].'" />
+		        			<input type="hidden" name="type" value="add" />
+							<input type="hidden" name="return_url" value="'.$current_url.'" />
+							</div><!-- .grid_6 -->
+							<div class="clear"></div>
+							</form>
+			    			</article>';
 					}
+				}
           
           	?>
            <article>

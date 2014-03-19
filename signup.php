@@ -1,6 +1,12 @@
 <?php
 include 'header.php';
 $database = new Queries();
+$failed = false;
+
+function do_alert($msg) 
+ {
+        echo '<script type="text/javascript">alert("' . $msg . '"); </script>';
+ }
 ?>
    <section id="main" class="page-login">
         <div class="container_12">
@@ -10,7 +16,8 @@ $database = new Queries();
                     <?php
                     if(!isset($_SESSION['username']))
 			 	 	{
-		               echo'<form action = "signup.php" method="post">
+			 	 	?>
+		                <form action = "signup.php" method="post">
 		                    	<table>
 		                    		<tr>
 					                    	<td><label for="username">Username : </label>
@@ -38,18 +45,22 @@ $database = new Queries();
 					                    	<input type="email" style="width: 300px" name="email"/><br></td>
 					                </tr>
 					             </table>   	
-					             <input type="submit" value="register" name="register" />		
-		                    </form>';
+					             <input type="submit" value="register" name="register" />				             
+		                    </form>
+		            <?php
 		            }
 		            else
 		            {
-		            echo '<p style="font-size:20px"> You are currently logged in as ' . $_SESSION['username'] . ', please logout first </p>';
-		            echo '</form>';
-			 	 	echo '<form action="login.php" method="POST">';
-			 	 	echo '<input type="submit" name="logout" value="logout">';
-			 	 	echo '</form>';
+		            ?>
+		            <p style="font-size:20px"> You are currently logged in as <?php echo $_SESSION['username'] ?>, please logout first </p>
+		            </form>
+			 	 	<form action="login.php" method="POST">
+			 	 	<input type="submit" name="logout" value="logout">
+			 	 	</form>
+		            <?php
 		            }
 		            ?>
+		            
                 </header>
                 </div><!-- .container_12 -->
             </div>
@@ -67,7 +78,12 @@ if(isset($_POST['register']))
 			echo '<script>
 		  		  location.reload();
 		  	     </script>';
+
 		}
+	}
+	else
+	{	
+		do_alert("The username already exist");
 	}
 	
 }
