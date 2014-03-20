@@ -1,293 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<head>
-<title>Maruti Admin</title><meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="css/fullcalendar.css" />
-<link rel="stylesheet" href="css/maruti-style.css" />
-<link rel="stylesheet" href="css/maruti-media.css" class="skin-color" />
-</head>
-<body>
+    <title>Dashboard - SB Admin</title>
 
-<!--Header-part-->
-<div id="header">
-  <h1><a href="http://www.mafiashare.net">Shared on www.MafiaShare.net</a></h1>
-</div>
-<!--close-Header-part--> 
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
 
-<!--top-Header-messaages-->
-<div class="btn-group rightzero"> <a class="top_message tip-left" title="Manage Files"><i class="icon-file"></i></a> <a class="top_message tip-bottom" title="Manage Users"><i class="icon-user"></i></a> <a class="top_message tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a> <a class="top_message tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a> </div>
-<!--close-top-Header-messaages--> 
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+  </head>
 
-<!--top-Header-menu-->
-<div id="user-nav" class="navbar navbar-inverse">
-  <ul class="nav">
-    <li class="" ><a title="" href="#"><i class="icon icon-user"></i> <span class="text">Profile</span></a></li>
-    <li class=" dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><a class="sAdd" title="" href="#">new message</a></li>
-        <li><a class="sInbox" title="" href="#">inbox</a></li>
-        <li><a class="sOutbox" title="" href="#">outbox</a></li>
-        <li><a class="sTrash" title="" href="#">trash</a></li>
-      </ul>
-    </li>
-    <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
-    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
-  </ul>
-</div>
-<div id="search">
-  <input type="text" placeholder="Search here..."/>
-  <button type="submit" class="tip-left" title="Search"><i class="icon-search icon-white"></i></button>
-</div>
-<!--close-top-Header-menu-->
+  <body>
 
-<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
-  <ul>
-    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a></li>
-    <li> <a href="charts.html"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a> </li>
-    <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Widgets</span></a> </li>
-    <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
-    <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
-    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label">3</span></a>
-      <ul>
-        <li><a href="form-common.html">Basic Form</a></li>
-        <li><a href="form-validation.html">Form with Validation</a></li>
-        <li><a href="form-wizard.html">Form with Wizard</a></li>
-      </ul>
-    </li>
-    <li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
-    <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
-    
-    <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span class="label">3</span></a>
-      <ul>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="chat.html">Chat option</a></li>
-      </ul>
-    </li>
+    <div id="wrapper">
 
-  </ul>
-</div>
-
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-  </div>
-  <div  class="quick-actions_homepage">
-    <ul class="quick-actions">
-          <li> <a href="#"> <i class="icon-dashboard"></i> My Dashboard </a> </li>
-          <li> <a href="#"> <i class="icon-shopping-bag"></i> Shopping Cart</a> </li>
-          <li> <a href="#"> <i class="icon-web"></i> Web Marketing </a> </li>
-          <li> <a href="#"> <i class="icon-people"></i> Manage Users </a> </li>
-          <li> <a href="#"> <i class="icon-calendar"></i> Manage Events </a> </li>
-        </ul>
-  </div>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12"> 
-        <div class="widget-box">
-          <div class="widget-title"><span class="icon"><i class="icon-signal"></i></span>
-            <h5>Site Analytics</h5>
-            <div class="buttons"><a href="#" class="btn btn-mini"><i class="icon-refresh"></i> Update stats</a></div>
-          </div>
-          <div class="widget-content">
-            <div class="row-fluid">
-              <div class="span12">
-                <div class="chart"></div>
-              </div>
-            </div></div></div>
-        <div class="row-fluid">
-              <div class="span6">
-                <div class="widget-box">
-                  <div class="widget-title"><span class="icon"><i class="icon-file"></i></span>
-                    <h5>Latest Posts</h5>
-                    </div>
-                  <div class="widget-content nopadding">
-                    <ul class="recent-posts">
-                      <li>
-                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
-                        <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                          <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
-                          </div>
-                      </li>
-                      <li>
-                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
-                        <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                          <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
-                          </div>
-                      </li>
-                      <li>
-                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av4.jpg"> </div>
-                        <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                          <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
-                          </div>
-                         
-                     <li><button class="btn btn-warning btn-mini">View All</button></li>
-                    </ul> 
-                  </div>
-                </div>
-              </div>
-              
-              <div class="span6">
-                <div class="widget-box">
-                  <div class="widget-title"> <span class="icon"> <i class="icon-refresh"></i> </span>
-                    <h5>News updates</h5>
-                  </div>
-                  <div class="widget-content nopadding updates">
-                    <div class="new-update clearfix"><i class="icon-ok-sign"></i>
-                      <div class="update-done"><a title="" href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a> <span>dolor sit amet, consectetur adipiscing eli</span> </div>
-                      <div class="update-date"><span class="update-day">20</span>jan</div>
-                    </div>
-                    <div class="new-update clearfix"> <i class="icon-gift"></i> <span class="update-notice"> <a title="" href="#"><strong>Congratulation Maruti, Happy Birthday </strong></a> <span>many many happy returns of the day</span> </span> <span class="update-date"><span class="update-day">11</span>jan</span> </div>
-                    <div class="new-update clearfix"> <i class="icon-move"></i> <span class="update-alert"> <a title="" href="#"><strong>Maruti is a Responsive Admin theme</strong></a> <span>But already everything was solved. It will ...</span> </span> <span class="update-date"><span class="update-day">07</span>Jan</span> </div>
-                    <div class="new-update clearfix"> <i class="icon-leaf"></i> <span class="update-done"> <a title="" href="#"><strong>Envato approved Maruti Admin template</strong></a> <span>i am very happy to approved by TF</span> </span> <span class="update-date"><span class="update-day">05</span>jan</span> </div>
-                    <div class="new-update clearfix"> <i class="icon-question-sign"></i> <span class="update-notice"> <a title="" href="#"><strong>I am alwayse here if you have any question</strong></a> <span>we glad that you choose our template</span> </span> <span class="update-date"><span class="update-day">01</span>jan</span> </div>
-                  </div>
-                </div>
-              </div>
-              
-              </div> 
-             
-          
-      </div>
-    </div>
-    <div class="widget-box">
-      <div class="widget-content">
-        <div class="row-fluid">
-          <div class="span6">
-            <div class="alert alert-success">We made chat option here, check out by writing something<a href="#" class="close" data-dismiss="alert">×</a></div>
-            <div class="widget-box widget-chat">
-              <div class="widget-title"> <span class="icon"> <i class="icon-comment"></i> </span>
-                <h5>Chat Option</h5>
-              </div>
-              <div class="widget-content nopadding">
-                <div class="chat-users panel-right2">
-                  <div class="panel-title">
-                    <h5>Online Users</h5>
-                  </div>
-                  <div class="panel-content nopadding">
-                    <ul class="contact-list">
-                      <li id="user-Sunil" class="online"><a href=""><img alt="" src="img/demo/av1.jpg" /> <span>Sunil</span></a></li>
-                      <li id="user-Laukik"><a href=""><img alt="" src="img/demo/av2.jpg" /> <span>Laukik</span></a></li>
-                      <li id="user-vijay" class="online new"><a href=""><img alt="" src="img/demo/av3.jpg" /> <span>Vijay</span></a><span class="msg-count badge badge-info">3</span></li>
-                      <li id="user-Jignesh" class="online"><a href=""><img alt="" src="img/demo/av4.jpg" /> <span>Jignesh</span></a></li>
-                      <li id="user-Malay" class="online"><a href=""><img alt="" src="img/demo/av5.jpg" /> <span>Malay</span></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="chat-content panel-left2">
-                  <div class="chat-messages" id="chat-messages">
-                    <div id="chat-messages-inner"></div>
-                  </div>
-                  <div class="chat-message well">
-                    <button class="btn btn-success">Send</button>
-                    <span class="input-box">
-                    <input type="text" name="msg-box" id="msg-box" />
-                    </span> </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="span6">
-            <div class="accordion" id="collapse-group">
-              <div class="accordion-group widget-box">
-                <div class="accordion-heading">
-                  <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                    <h5>Accordion Example 1</h5>
-                    </a> </div>
-                </div>
-                <div class="collapse in accordion-body" id="collapseGOne">
-                  <div class="widget-content"> It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
-                </div>
-              </div>
-              <div class="accordion-group widget-box">
-                <div class="accordion-heading">
-                  <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                    <h5>Accordion Example 2</h5>
-                    </a> </div>
-                </div>
-                <div class="collapse accordion-body" id="collapseGTwo">
-                  <div class="widget-content">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.</div>
-                </div>
-              </div>
-              <div class="accordion-group widget-box">
-                <div class="accordion-heading">
-                  <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-                    <h5>Accordion Example 3</h5>
-                    </a> </div>
-                </div>
-                <div class="collapse accordion-body" id="collapseGThree">
-                  <div class="widget-content"> Waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="span6">
-            <div class="widget-box">
-              <div class="widget-title">
-                <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
-                  <li><a data-toggle="tab" href="#tab2">Tab2</a></li>
-                  <li><a data-toggle="tab" href="#tab3">Tab3</a></li>
-                </ul>
-              </div>
-              <div class="widget-content tab-content">
-                <div id="tab1" class="tab-pane active"><p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </p>
-                  <img src="img/demo/demo-image1.jpg" alt="demo-image"/></div>
-                <div id="tab2" class="tab-pane">
-                  <img src="img/demo/demo-image2.jpg" alt="demo-image"/><p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </p></div>
-                <div id="tab3" class="tab-pane"><p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </p>
-                  <img src="img/demo/demo-image3.jpg" alt="demo-image"/></div>
-              </div>
-            </div>
-          </div>
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">SB Admin</a>
         </div>
-      </div>
-    </div>
-    
-  </div>
-</div>
-<div class="row-fluid">
-      <div id="footer" class="span12"> 2012 &copy; Marutii Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
-    </div>
-<script src="js/excanvas.min.js"></script> 
-<script src="js/jquery.min.js"></script> 
-<script src="js/jquery.ui.custom.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.flot.min.js"></script> 
-<script src="js/jquery.flot.resize.min.js"></script> 
-<script src="js/jquery.peity.min.js"></script> 
-<script src="js/fullcalendar.min.js"></script> 
-<script src="js/maruti.js"></script> 
-<script src="js/maruti.dashboard.js"></script> 
-<script src="js/maruti.chat.js"></script> 
-<script type="text/javascript">
-  // This function is called from the pop-up menus to transfer to
-  // a different page. Ignore if the value returned is a null string:
-  function goPage (newURL) {
 
-      // if url is empty, skip the menu dividers and reset the menu selection to default
-      if (newURL != "") {
-      
-          // if url is "-", it is this page -- reset the menu:
-          if (newURL == "-" ) {
-              resetMenu();            
-          } 
-          // else, send page to designated URL            
-          else {  
-            document.location.href = newURL;
-          }
-      }
-  }
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> Charts</a></li>
+            <li><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
+            <li><a href="forms.html"><i class="fa fa-edit"></i> Forms</a></li>
+            <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
+            <li><a href="bootstrap-elements.html"><i class="fa fa-desktop"></i> Bootstrap Elements</a></li>
+            <li><a href="bootstrap-grid.html"><i class="fa fa-wrench"></i> Bootstrap Grid</a></li>
+            <li><a href="blank-page.html"><i class="fa fa-file"></i> Blank Page</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Dropdown Item</a></li>
+                <li><a href="#">Another Item</a></li>
+                <li><a href="#">Third Item</a></li>
+                <li><a href="#">Last Item</a></li>
+              </ul>
+            </li>
+          </ul>
 
-// resets the menu selection upon entry to this page:
-function resetMenu() {
-   document.gomenu.selector.selectedIndex = 2;
-}
-</script>
-</body>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown messages-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">7</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">7 New Messages</li>
+                <li class="message-preview">
+                  <a href="#">
+                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                    <span class="name">John Smith:</span>
+                    <span class="message">Hey there, I wanted to ask you something...</span>
+                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li class="message-preview">
+                  <a href="#">
+                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                    <span class="name">John Smith:</span>
+                    <span class="message">Hey there, I wanted to ask you something...</span>
+                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li class="message-preview">
+                  <a href="#">
+                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                    <span class="name">John Smith:</span>
+                    <span class="message">Hey there, I wanted to ask you something...</span>
+                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#">View Inbox <span class="badge">7</span></a></li>
+              </ul>
+            </li>
+            <li class="dropdown alerts-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span class="badge">3</span> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Default <span class="label label-default">Default</span></a></li>
+                <li><a href="#">Primary <span class="label label-primary">Primary</span></a></li>
+                <li><a href="#">Success <span class="label label-success">Success</span></a></li>
+                <li><a href="#">Info <span class="label label-info">Info</span></a></li>
+                <li><a href="#">Warning <span class="label label-warning">Warning</span></a></li>
+                <li><a href="#">Danger <span class="label label-danger">Danger</span></a></li>
+                <li class="divider"></li>
+                <li><a href="#">View All</a></li>
+              </ul>
+            </li>
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>
+                <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
 
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Dashboard <small>Statistics Overview</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+            </ol>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              Welcome to SB Admin by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a>! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">456</p>
+                    <p class="announcement-text">New Mentions!</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      View Mentions
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-check fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">12</p>
+                    <p class="announcement-text">To-Do Items</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      Complete Tasks
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-tasks fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">18</p>
+                    <p class="announcement-text">Crawl Errors</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      Fix Issues
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">56</p>
+                    <p class="announcement-text">New Orders!</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      Complete Orders
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Statistics: October 1, 2013 - October 31, 2013</h3>
+              </div>
+              <div class="panel-body">
+                <div id="morris-chart-area"></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Traffic Sources: October 1, 2013 - October 31, 2013</h3>
+              </div>
+              <div class="panel-body">
+                <div id="morris-chart-donut"></div>
+                <div class="text-right">
+                  <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-clock-o"></i> Recent Activity</h3>
+              </div>
+              <div class="panel-body">
+                <div class="list-group">
+                  <a href="#" class="list-group-item">
+                    <span class="badge">just now</span>
+                    <i class="fa fa-calendar"></i> Calendar updated
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge">4 minutes ago</span>
+                    <i class="fa fa-comment"></i> Commented on a post
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge">23 minutes ago</span>
+                    <i class="fa fa-truck"></i> Order 392 shipped
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge">46 minutes ago</span>
+                    <i class="fa fa-money"></i> Invoice 653 has been paid
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge">1 hour ago</span>
+                    <i class="fa fa-user"></i> A new user has been added
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge">2 hours ago</span>
+                    <i class="fa fa-check"></i> Completed task: "pick up dry cleaning"
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge">yesterday</span>
+                    <i class="fa fa-globe"></i> Saved the world
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <span class="badge">two days ago</span>
+                    <i class="fa fa-check"></i> Completed task: "fix error on sales page"
+                  </a>
+                </div>
+                <div class="text-right">
+                  <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-money"></i> Recent Transactions</h3>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover table-striped tablesorter">
+                    <thead>
+                      <tr>
+                        <th>Order # <i class="fa fa-sort"></i></th>
+                        <th>Order Date <i class="fa fa-sort"></i></th>
+                        <th>Order Time <i class="fa fa-sort"></i></th>
+                        <th>Amount (USD) <i class="fa fa-sort"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>3326</td>
+                        <td>10/21/2013</td>
+                        <td>3:29 PM</td>
+                        <td>$321.33</td>
+                      </tr>
+                      <tr>
+                        <td>3325</td>
+                        <td>10/21/2013</td>
+                        <td>3:20 PM</td>
+                        <td>$234.34</td>
+                      </tr>
+                      <tr>
+                        <td>3324</td>
+                        <td>10/21/2013</td>
+                        <td>3:03 PM</td>
+                        <td>$724.17</td>
+                      </tr>
+                      <tr>
+                        <td>3323</td>
+                        <td>10/21/2013</td>
+                        <td>3:00 PM</td>
+                        <td>$23.71</td>
+                      </tr>
+                      <tr>
+                        <td>3322</td>
+                        <td>10/21/2013</td>
+                        <td>2:49 PM</td>
+                        <td>$8345.23</td>
+                      </tr>
+                      <tr>
+                        <td>3321</td>
+                        <td>10/21/2013</td>
+                        <td>2:23 PM</td>
+                        <td>$245.12</td>
+                      </tr>
+                      <tr>
+                        <td>3320</td>
+                        <td>10/21/2013</td>
+                        <td>2:15 PM</td>
+                        <td>$5663.54</td>
+                      </tr>
+                      <tr>
+                        <td>3319</td>
+                        <td>10/21/2013</td>
+                        <td>2:13 PM</td>
+                        <td>$943.45</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="text-right">
+                  <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="js/morris/chart-data-morris.js"></script>
+    <script src="js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="js/tablesorter/tables.js"></script>
+
+  </body>
 </html>
