@@ -10,6 +10,11 @@
 			return $result;
 		}
 
+		public function getCategoryGamesLimit($category) {
+			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prCategorie = ? LIMIT 4", array($category));
+			return $result;
+		}
+
 		public function getCategoryGames($category) {
 			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prCategorie = ?", array($category));
 			return $result;

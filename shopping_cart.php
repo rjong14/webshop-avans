@@ -15,7 +15,8 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                 <?php
                 if(isset($_SESSION['products']))
                 {
-                     echo   '<article>
+                    ?>
+                     <article>
                             
                             <table class="cart_product">
                                 <tr class="bg">
@@ -27,32 +28,40 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                                     <th class="category">Category </th>
                                     <th class="close"> </th>
                                   
-                                </tr>';
-
+                                </tr>
+                                <?php
                                 foreach($_SESSION['products'] as $product)
                                 {
-
-                                echo '<tr>
-                                        <td class="images"><a href="product_page.php?productid='.$product["id"].'"><img src="' . $product['image'] . '"></a></td>
-                                        <td class="name">' . $product['name'] . '</td>
-                                        <td class="price">' . $product['price'] . '</td>
-                                        <td class="qty">' . $product['qty'] . '</td>
-                                        <td class="subtotal">€ ' . $product['price'] * $product['qty'] .  '</td>
-                                        <td class="category">' . $product['category'] . '</td>
-                                        <td class="close"><a href="cart_update.php?removep='.$product["id"].'&return_url='.$current_url.'"><img src="img/delete.png"/> </a></td>
-                                    </tr>';
+                                ?>
+                                    <tr>
+                                         <?php echo '<td class="images"><a href="product_page.php?productid='.$product["id"].'"><img src="' . $product['image'] . '"></a></td>';?>
+                                        <td class="name"><?php echo $product['name'] ?></td>
+                                        <td class="price"><?php echo $product['price'] ?></td>
+                                        <td class="qty"> <?php echo $product['qty'] ?></td>
+                                        <td class="subtotal">€ <?php echo ($product['price'] * $product['qty']) ?>'</td>
+                                        <td class="category"><?php $product['category'] ?></td>
+                                        <td><a title="close" class="close" href="cart_update.php?removep=<?php echo $product["id"] . '&return_url=' . $return_url ?>"></a></td>
+                                       
+                                    </tr>
+                                <?php
                                 }
-
-                            echo '</table>
+                                ?>
+                                    <tr>
+                                    <td style="height: 30x; font-size:20px;">Totaal prijs : </td>
+                                    <td class="close" colspan="5" style="font-size:20px;">€ <?php echo getSessionTotal() ?><td>
+                                    </tr>
+                                </table>
                                 <div class="clear"></div>
-                            </article>';
+                            </article>
+                            <?php
                 }
                 else
                 {
-                    echo '<p>There are currently no products in your shopping cart</p>';
+                    ?>
+                    <p>There are currently no products in your shopping cart</p>
+                    <?php
                 }
                 ?>
-               
                 <div class="clear"></div>
             </div><!-- #content -->
 

@@ -3,6 +3,8 @@ session_start();
 include_once 'queries.php';
 $database = new Queries();
 $menu = $database->getMenuItems();
+$return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+
 ?>
 
 <html>
@@ -39,7 +41,7 @@ $menu = $database->getMenuItems();
                 <nav>
                     <a class="menu-open" href="#">Menu</a>
                     <ul>
-                        <li class="current"><a href="#">My Account</a></li>
+                        <li class="current"><a href="index.php">Home</a></li>
                         <li><a href="shopping_cart.php">Shopping cart</a></li>
                         <li><a href="login.php">Log In</a></li>
                         <li><a href="signup.php">Sign Up</a></li>
@@ -73,34 +75,47 @@ $menu = $database->getMenuItems();
                         ?>
                         
                     </div><!-- .welcome -->
-
                     <ul id="cart_nav">
                         <li>
-                            <a class="cart_li" href="#">
+                            <a class="cart_li" href="shopping_cart.php">
                                 <div class="cart_ico"></div>
-                                Cart
-                                <span>$0.00</span>
+                                <span>€<?php echo getSessionTotal(); ?></span>
                             </a>
                             <ul class="cart_cont">
-                                <li class="no_border recently">Recently added item(s)</li>
-                                <li>
-                                    <a href="product_page.php" class="prev_cart"><div class="cart_vert"><img src="img/content/cart_img.png" alt="Product 1" title=""></div></a>
-                                    <div class="cont_cart">
-                                        <h4>Faddywax Fragrance Diffuser Set <br>Gardenia</h4>
-                                        <div class="price">1 x <span>$399.00</span></div>
-                                    </div>
-                                    <a title="close" class="close" href="#"></a>
-                                    <div class="clear"></div>
-                                </li>
-                                <li>
-                                    <a href="product_page.php" class="prev_cart"><div class="cart_vert"><img src="img/content/cart_img2.png" alt="Product 2" title=""></div></a>
-                                    <div class="cont_cart">
-                                        <h4>Caldrea Linen and Room Spray</h4>
-                                        <div class="price">1 x <span>$123.00</span></div>
-                                    </div>
-                                    <a title="close" class="close" href="#"></a>
-                                    <div class="clear"></div>
-                                </li>
+                                
+
+                                <?php
+                                if(isset($_SESSION['products']) && $_SESSION['products'] != "") 
+                                {
+                                    ?>
+                                    <li class="no_border recently">Recently added item(s)</li>
+                                    <?php
+                                    foreach($_SESSION['products'] as $product)
+                                    {
+                                        ?>
+                                        
+                                        <li>
+                                            <a href="product_page.php?productid=<?php echo $product['id'] ?>" class="prev_cart"><div class="cart_vert"><img src=<?php echo $product['image'] ?> alt="Product 1" title=""></div></a>
+                                            <div class="cont_cart">
+                                                <h4><?php echo $product['name'] ?></h4>
+                                                <div class="price"><?php echo $product['qty'] ?> x <span><?php echo $product['price'] ?></span></div>
+                                            </div>
+                                            <a title="close" class="close" href="cart_update.php?removep=<?php echo $product["id"] . '&return_url=' . $return_url ?>"></a>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                                else
+                                {
+                                    ?> 
+                                    <li class="no_border recently">Your shopping cart is empty</li>
+                                    <br>
+                                    <br>
+                                    <?php
+                                }
+                                ?>
+
                                 <li class="no_border">
                                     <a href="shopping_cart.php" class="view_cart">View shopping cart</a>
                                     <a href="checkout.php" class="checkout">Procced to Checkout</a>
@@ -111,7 +126,7 @@ $menu = $database->getMenuItems();
 
                     <form class="search" action="search.php">
                         <input type="submit" class="search_button" value=""></a>
-                        <input type="text" name="search" class="search_form" value="" placeholder="Search entire store here...">
+                        <input type="text" name="search" class="search_form" value="" placeholder="Search entire store hepre...">
                     </form><!-- .search -->
                 </div><!-- .top_header -->
             </div><!-- .grid_9 -->
@@ -133,3 +148,18 @@ $menu = $database->getMenuItems();
         </div>
         <div class="clear"></div>
     </header>
+<?php 
+
+function getSessionTotal()
+{
+    $price = 0;
+    if(isset($_SESSION['products'])) {
+        foreach($_SESSION['products'] as $product)
+        {
+
+            $price = $price +  ($product['qty'] * $product['price']);
+        }
+    }
+    return $price;
+}
+?>

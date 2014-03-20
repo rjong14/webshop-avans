@@ -94,9 +94,9 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 
 		    <nav class="right_menu">
 			<ul>
-			    <li><a href="#">PC</a></li>
-			    <li><a href="#">Playstation</a></li>
-			    <li class="current"><a href="#">XBOX</a></li>
+			    <li><a href="computer.php">PC</a></li>
+			    <li class="current"><a href="playstation.php">Playstation</a></li>
+			    <li><a href="xbox.php">XBOX</a></li>
 			</ul>
 		    </nav><!-- .right_menu -->
                 </aside><!-- #categories_nav -->

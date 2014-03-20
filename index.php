@@ -1,5 +1,10 @@
 <?php
 include 'header.php';
+$database = new QUeries();
+$product_xbox = $database->getCategoryGamesLimit("xbox");
+$product_playstation = $database->getCategoryGamesLimit("playstation");
+$product_computer = $database->getCategoryGamesLimit("computer");
+$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 ?>
 
     <div id="slider_body">
@@ -35,171 +40,129 @@ include 'header.php';
                 <div class="clear"></div>
 
                 <div class="products featured-products">
-                    <article class="grid_3 article">
-                        <img class="sale" src="img/sale.png" alt="Sale">
-                        <div class="prev">
-                            <a href="product_page.html"><img src="img/content/gta_5.png" alt="Product 1" title=""></a>
-                        </div><!-- .prev -->
 
-                        <h3 class="title">gta V<br>Rockstar games</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $56.00
-                              </div>
-                            </div>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
-
-                    </article><!-- .grid_3.article -->
-
-                    <article class="grid_3 article">
-                         <div class="prev">
-                            <a href="product_page.html"><img src="img/content/product2.png" alt="Product 2" title=""></a>
-                        </div><!-- .prev -->
-
-                        <h3 class="title">beautiful Valentine And Engagement</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $550.00
-                                    <div class="price_old">$725.00</div>
-                                </div>
-                            </div>
-                            <a href="#" class="compare"></a>
-                            <a href="#" class="wishlist"></a>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
-
-                    </article><!-- .grid_3.article -->
-
-                    <article class="grid_3 article">
-                        <img class="sale" src="img/new.png" alt="New">
-                        <div class="prev">
-                            <a href="product_page.html"><img src="img/content/product3.png" alt="Product 3" title=""></a>
-                        </div><!-- .prev -->
-
-                        <h3 class="title">Emerald Cut Emerald Ring</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $550.00
-                                    <div class="price_old">$725.00</div>
-                                </div>
-                            </div>
-                            <a href="#" class="compare"></a>
-                            <a href="#" class="wishlist"></a>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
-
-                    </article><!-- .grid_3.article -->
-
-                    <article class="grid_3 article">
-                        <div class="prev">
-                            <a href="product_page.html"><img src="img/content/product4.png" alt="Product 4" title=""></a>
-                        </div><!-- .prev -->
+                    <?php
+                    if($product_computer != false)
+                    {
+                        foreach ($product_computer as $product) {
+                            
                         
-                        
+                        ?>
+                        <article class="grid_3 article">
+                            <form action="cart_update.php" method="POST">
+                            <img class="sale" src="img/top.png" alt="Sale">
+                            <div class="prev">
+                                <a href="product_page.php?productid=<?php echo $product['id'] ?>"><img src=<?php echo $product['prImage'] ?> alt="Product 1" title=""></a>
+                            </div><!-- .prev -->
 
-                        <h3 class="title">Diamond Necklaces and Pendants</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $550.00
-                                    <div class="price_old">$725.00</div>
+                            <h3 class="title"><?php echo $product['prNaam'] ?></h3>
+                            <div class="cart">
+                                <div class="price">
+                                    <div class="vert">
+                                        €<?php echo $product['prPrijs'] ?>
+                                  </div>
                                 </div>
-                            </div>
-                            <a href="#" class="compare"></a>
-                            <a href="#" class="wishlist"></a>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
+                                Quantity <input type="text" name="product_qty" style="width: 40px">
 
-                    </article><!-- .grid_3.article -->
+                                 <input type="image" class="bay" src= "img/bg_cart.png" style="width:30px; height:30px;"/>
+                                
+                            </div><!-- .cart -->
+                                <input type="hidden" name="product_id" value=<?php echo $product['id'] ?> />
+                                <input type="hidden" name="type" value="add" />
+                                <input type="hidden" name="return_url" value=<?php echo $current_url ?> />
+                             </form>
+                        </article><!-- .grid_3.article -->
+                        <?php
+                        }
+                    }
+                    ?>
 						</div><!-- .products featured-products -->
-<div class="products featured-products">
+                <div class="products featured-products">
              
                     <h2 class="product-title">XBOX</h2>
 
+                    <?php
+                    if($product_computer != false)
+                    {
+                        foreach ($product_xbox as $product) {
+                            
+                        
+                        ?>
                     <article class="grid_3 article">
-                        <div class="prev">
-                            <a href="product_page.html"><img src="img/content/product5.png" alt="Product 5" title=""></a>
-                        </div><!-- .prev -->
+                            <form action="cart_update.php" method="POST">
+                            <img class="sale" src="img/sale.png" alt="Sale">
+                            <div class="prev">
+                                <a href="product_page.php?productid=<?php echo $product['id'] ?>"><img src=<?php echo $product['prImage'] ?> alt="Product 1" title=""></a>
+                            </div><!-- .prev -->
 
-                        <h3 class="title">Emerald Diamond Solitaire</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $550.00
-                                    <div class="price_old">$725.00</div>
+                            <h3 class="title"><?php echo $product['prNaam'] ?></h3>
+                            <div class="cart">
+                                <div class="price">
+                                    <div class="vert">
+                                        €<?php echo $product['prPrijs'] ?>
+                                  </div>
                                 </div>
-                            </div>
-                            <a href="#" class="compare"></a>
-                            <a href="#" class="wishlist"></a>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
+                                Quantity <input type="text" name="product_qty" style="width: 40px">
 
-                    </article><!-- .grid_3.article -->
+                                 <input type="image" class="bay" src= "img/bg_cart.png" style="width:30px; height:30px;"/>
+                                
+                            </div><!-- .cart -->
+                                <input type="hidden" name="product_id" value=<?php echo $product['id'] ?> />
+                                <input type="hidden" name="type" value="add" />
+                                <input type="hidden" name="return_url" value=<?php echo $current_url ?> />
+                             </form>
+                        </article><!-- .grid_3.article -->
 
-                    <article class="grid_3 article">
-                        <div class="prev">
-                            <a href="product_page.html"><img src="img/content/product6.png" alt="Product 6" title=""></a>
-                        </div><!-- .prev -->
+                        <?php
+                        }
+                    }
+                    ?>
 
-                        <h3 class="title">Diamond Necklaces and Pendants</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $550.00
-                                    <div class="price_old">$725.00</div>
+                    <div class="clear"></div>
+                </div><!-- .products -->
+
+
+
+                 <div class="products featured-products">
+             
+
+                    <h2 class="product-title">PLAYSTATION</h2>
+
+                    <?php
+                    if($product_computer != false)
+                    {
+                        foreach ($product_playstation as $product) {
+                            
+                        
+                        ?>
+                        <article class="grid_3 article">
+                            <form action="cart_update.php" method="POST">
+                            <img class="sale" src="img/new.png" alt="Sale">
+                            <div class="prev">
+                                <a href="product_page.php?productid=<?php echo $product['id'] ?>"><img src=<?php echo $product['prImage'] ?> alt="Product 1" title=""></a>
+                            </div><!-- .prev -->
+
+                            <h3 class="title"><?php echo $product['prNaam'] ?></h3>
+                            <div class="cart">
+                                <div class="price">
+                                    <div class="vert">
+                                        €<?php echo $product['prPrijs'] ?>
+                                  </div>
                                 </div>
-                            </div>
-                            <a href="#" class="compare"></a>
-                            <a href="#" class="wishlist"></a>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
+                                Quantity <input type="text" name="product_qty" style="width: 40px">
 
-                    </article><!-- .grid_3.article -->
-
-                    <article class="grid_3 article">
-                        <img class="sale" src="img/top.png" alt="Top">
-                        <div class="prev">
-                            <a href="product_page.html"><img src="img/content/product7.png" alt="Product 7" title=""></a>
-                        </div><!-- .prev -->
-
-                        <h3 class="title">Gold Pearl Bracelet</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $550.00
-                                    <div class="price_old">$725.00</div>
-                                </div>
-                            </div>
-                            <a href="#" class="compare"></a>
-                            <a href="#" class="wishlist"></a>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
-
-                    </article><!-- .grid_3.article -->
-
-                    <article class="grid_3 article">
-                        <div class="prev">
-                            <a href="product_page.html"><img src="img/content/product8.png" alt="Product 8" title=""></a>
-                        </div><!-- .prev -->
-
-                        <h3 class="title">beautiful Valentine And Engagement</h3>
-                        <div class="cart">
-                            <div class="price">
-                                <div class="vert">
-                                    $550.00
-                                    <div class="price_old">$725.00</div>
-                                </div>
-                            </div>
-                            <a href="#" class="compare"></a>
-                            <a href="#" class="wishlist"></a>
-                            <a href="#" class="bay"><img src="img/bg_cart.png" alt="Buy" title=""></a>
-                        </div><!-- .cart -->
-
-                    </article><!-- .grid_3.article -->
+                                 <input type="image" class="bay" src= "img/bg_cart.png" style="width:30px; height:30px;"/>
+                                
+                            </div><!-- .cart -->
+                                <input type="hidden" name="product_id" value=<?php echo $product['id'] ?> />
+                                <input type="hidden" name="type" value="add" />
+                                <input type="hidden" name="return_url" value=<?php echo $current_url ?> />
+                             </form>
+                        </article><!-- .grid_3.article -->
+                        <?php
+                        }
+                    }
+                    ?>
 
                     <div class="clear"></div>
                 </div><!-- .products -->
