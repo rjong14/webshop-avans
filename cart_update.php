@@ -9,11 +9,10 @@ if(isset($_POST["type"]) && $_POST["type"]=='add')
 	$product_qty 	= filter_var($_POST["product_qty"], FILTER_SANITIZE_NUMBER_INT); 
 	$return_url 	= base64_decode($_POST["return_url"]); 
 	$productInfo 	= $database->getProductInfo($product_id);
-	
+
 	if($productInfo != false)
 	{
-		$new_product = array(array('id'=>$product_id, 'name'=>$productInfo[0]['prNaam'], 'description'=>$productInfo[0]['prBeschrijving'], 'image'=>$productInfo[0]['prImage'], 'category'=>$productInfo[0]['prCategorie'],  'qty'=>$product_qty, 'price'=>$productInfo[0]['prPrijs']));
-	
+		$new_product = array(array('id'=>$product_id, 'name'=>$productInfo[0]['prNaam'], 'description'=>$productInfo[0]['prBeschrijving'], 'image'=>$productInfo[0]['prImage'], 'category'=>$productInfo[0]['naam'],  'qty'=>$product_qty, 'price'=>$productInfo[0]['prPrijs']));
 		if(isset($_SESSION["products"])) 
 		{
 			$found = false;

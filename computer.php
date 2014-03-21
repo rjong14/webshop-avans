@@ -36,7 +36,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 							<div class="grid_6">
 				 			 <div class="entry_content">
 								<h3 class="title">' . $product['prNaam'] . '</h3>
-		           				 <p>'. $product['prBeschrijving'] .'</p>
+		           				 <p>'. $product['prKbeschrijving'] .'</p>
 		              		</div><!-- .entry_content -->
 		                        
 		               	 	<div class="price">

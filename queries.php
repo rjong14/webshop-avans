@@ -9,14 +9,43 @@
 			$result = $this->getInstance()->selectQuery("SELECT * FROM menu", null);
 			return $result;
 		}
-
+		public function deleteProduct($id)
+		{
+			$result = $this->getInstance()->executeQuery("DELETE from producten where id = ?", array($id));
+			return $result;
+		}
+		public function getAllCategories()
+		{
+			$result = $this->getInstance()->selectQuery("SELECT * from categorie", null);
+			return $result;
+		}
+		public function deleteUser($id)
+		{
+			$result = $this->getInstance()->executeQuery("DELETE from gebruikers where id = ?", array($id));
+			return $result;
+		}
+		public function deleteCategorie($id)
+		{
+			$result = $this->getInstance()->executeQuery("DELETE from categorie where id = ?", array($id));
+			return $result;
+		}
+		public function getAllUsers()
+		{
+			$result = $this->getInstance()->selectQuery("SELECT * from gebruikers", null);
+			return $result;
+		}
+		public function getAllProducts()
+		{
+			$result = $this->getInstance()->selectQuery("SELECT id, prCategorie, prNaam, left(prBeschrijving,40) as prBeschrijving, left(prBeschrijving,20) as prKbeschrijving, prImage, prPrijs FROM producten", null);
+			return $result;
+		}
 		public function getCategoryGamesLimit($category) {
-			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prCategorie = ? LIMIT 4", array($category));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ? LIMIT 4", array($category));
 			return $result;
 		}
 
 		public function getCategoryGames($category) {
-			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where prCategorie = ?", array($category));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ?", array($category));
 			return $result;
 		}
 		public function checkLogin($username, $password)
@@ -43,7 +72,7 @@
 		}
 		public function getProductInfo($id)
 		{
-			$result = $this->getInstance()->selectQuery("SELECT * FROM producten where id = ?", array($id));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where producten.id = ?", array($id));
 			return $result;
 		}
 		// Created a function to make one instance of the "DB" class

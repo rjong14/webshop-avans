@@ -42,7 +42,7 @@ $return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUE
                     <a class="menu-open" href="#">Menu</a>
                     <ul>
                         <li class="current"><a href="index.php">Home</a></li>
-                        <li><a href="shopping_cart.php">Shopping cart</a></li>
+                        <li><a href="shopping_cart.php">Shopping cart  (<?php echo countCart(); ?>)</a></li>
                         <li><a href="login.php">Log In</a></li>
                         <li><a href="signup.php">Sign Up</a></li>
                     </ul>
@@ -161,5 +161,18 @@ function getSessionTotal()
         }
     }
     return $price;
+}
+function countCart()
+{
+     $count = 0;
+    if(isset($_SESSION['products'])) {
+        foreach($_SESSION['products'] as $product)
+        {
+
+            $count = $count+1;
+        }
+    }
+    return $count;
+
 }
 ?>

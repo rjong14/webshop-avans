@@ -39,7 +39,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                                         <td class="price"><?php echo $product['price'] ?></td>
                                         <td class="qty"> <?php echo $product['qty'] ?></td>
                                         <td class="subtotal">€ <?php echo ($product['price'] * $product['qty']) ?>'</td>
-                                        <td class="category"><?php $product['category'] ?></td>
+                                        <td class="category"><?php echo $product['category'] ?></td>
                                         <td><a title="close" class="close" href="cart_update.php?removep=<?php echo $product["id"] . '&return_url=' . $return_url ?>"></a></td>
                                        
                                     </tr>
