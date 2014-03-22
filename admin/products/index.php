@@ -62,10 +62,10 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                         <td><?php echo $product['prPrijs'] ?></td>
                         <td><?php echo $product['prImage'] ?></td>
                         <td class="text-right">
-                          <a href="edit.php?id=<?php echo $product['id'] ?>">
+                          <a style="text-decoration: none" href="edit.php?id=<?php echo $product['id'] ?>">
                               <img src="../img/editicon.png" />
                             </a>
-                           <a href="delete.php?remove_id=<?php echo $product["id"] . '&action=remove&return_url=' . $current_url ?> " onclick="return confirm('Weet u zeker dat u <?php echo $product['prNaam'] ?> wilt verwijderen?');">
+                           <a style="text-decoration: none" href="delete.php?remove_id=<?php echo $product["id"] . '&action=remove&return_url=' . $current_url ?> " onclick="return confirm('Weet u zeker dat u <?php echo $product['prNaam'] ?> wilt verwijderen?');">
                               <img src="../img/deleteicon.png" />
                             </a>
                         </td>

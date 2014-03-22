@@ -2,6 +2,7 @@
 include '../header.php';
 include '../../queries.php';
 $database = new Queries();
+$categories = $database->getAllCategories();
 
 ?>
         <div class="container-fluid">
@@ -30,8 +31,27 @@ $database = new Queries();
 <div class="custom">
 <label for='name' >Product naam: </label><br>
 <input type='text' class="custom" name='name' id='name' placeholder="Product naam" maxlength="50" style="width:50%;" /><br>
+
+
 <label for='categorie' >Product categorie: </label><br>
-<input type='text' class="custom" name='categorie' id='categorie'placeholder="Product categorie"  maxlength="50" style="width:50%;" /><br>
+
+
+<select id="categorie" name="categorie" class ="custom">
+  <?php
+  if($categories != false)  
+    {
+      foreach($categories as $categorie)
+      {
+          ?>
+          <option value=<?php echo $categorie['id'] ?>><?php echo $categorie['naam'] ?></option>
+          <?php
+        
+      }
+    }
+
+  ?>
+</select><br>
+
 <label for='price' >Product prijs: </label><br>
 <input type='text' class="custom" name='price' id='price 'placeholder="Product prijs"  maxlength="50" style="width:50%;" /><br>
 <label for='kort' >Korte omschrijving: </label><br>

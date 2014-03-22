@@ -6,6 +6,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 $product_id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 $product_details = $database->getProductInfo($product_id);
 $categories = $database->getAllCategories();
+$categorie_naam = "";
 ?>
         <div class="container-fluid">
       <div class="row">
@@ -46,6 +47,7 @@ $categories = $database->getAllCategories();
           ?>
           <option value=<?php echo $categorie['id'] ?> selected><?php echo $categorie['naam'] ?></option>
           <?php
+          $categorie_naam = $categorie['naam'];
         }
         else
         {
