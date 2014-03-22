@@ -25,7 +25,14 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
     <link href="../dashboard.css" rel="stylesheet">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
-          <h2 class="sub-header">Producten overzicht</h2>
+          <h2 class="sub-header">Producten overzicht </h2>
+          
+
+        <form action="create.php" method="POST">
+            <div style="text-align: right">
+          <input type="submit" class="text-right" name="new" value="Nieuw product toevoegen"/>
+          </div>
+        </form>
           <div class="table-responsive">
             <table style="" class="table table-striped">
               <thead>

@@ -12,6 +12,37 @@ body {
  * Global add-ons
  */
 
+ .input {
+    border: 1px solid #006;
+    background: #ffc;
+}
+.input:hover {
+    border: 1px solid #f00;
+    background: #ff6;
+}
+.button {
+    border: none;
+    background: url('/forms/up.png') no-repeat top left;
+    padding: 2px 8px;
+}
+.button:hover {
+    border: none;
+    background: url('/forms/down.png') no-repeat top left;
+    padding: 2px 8px;
+}
+label {
+    display: block;
+    width: 150px;
+    float: left;
+    margin: 2px 4px 6px 4px;
+    text-align: right;
+}
+br { clear: left; }
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; }
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -24,6 +55,22 @@ a.close {
     width: 28px;
 }
 
+/* Input */
+input[type="email"],
+input[type="text"] {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 19px;
+   
+    font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
+    height: 30px;
+    width: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    color: #777;
+    width: 100%
+}
 /*
  * Sidebar
  */

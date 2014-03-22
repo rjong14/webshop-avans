@@ -14,9 +14,13 @@
 			$result = $this->getInstance()->executeQuery("DELETE from producten where id = ?", array($id));
 			return $result;
 		}
-		public function getAllCategories()
+
+		public function addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam)
+
 		{
-			$result = $this->getInstance()->selectQuery("SELECT * from categorie", null);
+			echo '<script type="text/javascript">alert("laalla/script>'; 
+			$result = $this->getInstance()->executeQuery("INSERT INTO producten values(?,?,?,?,?,?)", array($categorie, $name, $prijs, $padnaam, $lang, $kort));
+			echo '<script type="text/javascript">alert("testhier!");</script>'; 
 			return $result;
 		}
 		public function deleteUser($id)
@@ -50,7 +54,7 @@
 		}
 		public function checkLogin($username, $password)
 		{
-			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruikers where gebruikersnaam = ? and wachtwoord = ?", array($username, $password));
+			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruiker,s where gebruikersnaam = ? and wachtwoord = ?", array($username, $password));
 			return $result;
 		}
 		public function searchResult($name)
