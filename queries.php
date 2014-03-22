@@ -16,11 +16,15 @@
 		}
 
 		public function addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam)
-
 		{
-			echo '<script type="text/javascript">alert("laalla/script>'; 
-			$result = $this->getInstance()->executeQuery("INSERT INTO producten values(?,?,?,?,?,?)", array($categorie, $name, $prijs, $padnaam, $lang, $kort));
-			echo '<script type="text/javascript">alert("testhier!");</script>'; 
+			$result = $this->getInstance()->executeQuery("INSERT INTO producten (prCategorie, prPrijs, prImage, prNaam, prBeschrijving, prKbeschrijving) 
+				values(?,?,?,?,?,?)", array($categorie, $prijs, $padnaam, $naam, $lang, $kort));
+			return $result;
+		}
+		public function editProduct($id, $naam, $categorie, $prijs, $kort, $lang, $padnaam)
+		{
+		
+			$result = $this->getInstance()->executeQuery("UPDATE producten SET prNaam = ?, prCategorie = ?, prPrijs = ?, prKbeschrijving = ?,  prBeschrijving = ?,  prImage = ? WHERE id = ?", array($naam, $categorie, $prijs, $kort, $lang, $padnaam, $id));
 			return $result;
 		}
 		public function deleteUser($id)
@@ -70,13 +74,18 @@
 		public function insertUser($username, $password, $firstname, $lastname, $adress, $city, $zip, $email)
 		{
 
-			$result = $this->getInstance()->executeQuery("INSERT INTO  `webshop`.`gebruikers` (`id` ,`gebruikersnaam` ,`wachtwoord` ,`voornaam` ,`achternaam` ,`adres` ,`woonplaats` ,`postcode` ,`email` ,`isAdmin`)
+			$result = $this->getInstance()->executeQuery("INSERT INTO  'webshop'.gebruikers (id ,gebruikersnaam ,wachtwoord ,voornaam ,achternaam ,adres ,woonplaats ,postcode ,email ,isAdmin)
 			VALUES (NULL ,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  '0');", array($username, $password, $firstname, $lastname, $adress, $city, $zip, $email));
 			return $result;
 		}
 		public function getProductInfo($id)
 		{
 			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where producten.id = ?", array($id));
+			return $result;
+		}
+		public function getAllCategories()
+		{
+			$result = $this->getInstance()->selectQuery("SELECT * FROM categorie", null);
 			return $result;
 		}
 		// Created a function to make one instance of the "DB" class

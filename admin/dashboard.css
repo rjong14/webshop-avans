@@ -35,7 +35,22 @@ label {
     width: 150px;
     float: left;
     margin: 2px 4px 6px 4px;
-    text-align: right;
+    text-align: left;
+}
+select{
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 19px;
+   
+    font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
+    height: 30px;
+    width: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    color: #777;
+    width: 50%
+
 }
 br { clear: left; }
 
@@ -53,6 +68,21 @@ a.close {
 
     height: 28px;
     width: 28px;
+}
+
+ textarea {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 19px;
+   
+    font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
+    height: 60px;
+    width: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    color: #777;
+    width: 100%
 }
 
 /* Input */

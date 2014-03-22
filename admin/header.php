@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Webshop beheer</title>
 
     <!-- Bootstrap core CSS -->
     

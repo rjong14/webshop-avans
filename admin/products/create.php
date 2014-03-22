@@ -2,7 +2,6 @@
 include '../header.php';
 include '../../queries.php';
 $database = new Queries();
-$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>
         <div class="container-fluid">
@@ -24,37 +23,28 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
     <link href="../dashboard.css" rel="stylesheet">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="sub-header">Product toevoegen </h2>
-          
 
-        <form action="create.php" method="POST">
-            <div style="text-align: right">
-          <input type="submit" class="text-right" name="new" value="Nieuw product toevoegen"/>
-          </div>
-        </form>
      
 
-<form = "create.php" method="GET">
- <fieldset >
-<legend>Producten</legend>
+<form = "create.php" method="POST">
 <div class="custom">
-<label for='name' >Pruduct naam: </label><br>
-<input type='text' class="custom" name='name' id='name' placeholder="naam" maxlength="50" style="width:50%;" /><br>
-<label for='name' >Pruduct categorie: </label><br>
-<input type='text' class="custom" name='categorie' id='categorie'placeholder="categorie"  maxlength="50" style="width:50%;" /><br>
-<label for='name' >Pruduct prijs: </label><br>
-<input type='text' class="custom" name='price' id='price 'placeholder="prijs"  maxlength="50" style="width:50%;" /><br>
-<label for='name' >Korte omschrijving: </label><br>
-<input type='text' class="custom" name='kort' id='kort' placeholder="kort"  maxlength="50" style="width:50%;" /><br>
-<label for='name' >Lange omschrijving: </label><br>
-<input type='text' class="custom" name='lang' id='lang' placeholder="lang"  maxlength="50" style="width:50%;" /><br>
+<label for='name' >Product naam: </label><br>
+<input type='text' class="custom" name='name' id='name' placeholder="Product naam" maxlength="50" style="width:50%;" /><br>
+<label for='categorie' >Product categorie: </label><br>
+<input type='text' class="custom" name='categorie' id='categorie'placeholder="Product categorie"  maxlength="50" style="width:50%;" /><br>
+<label for='price' >Product prijs: </label><br>
+<input type='text' class="custom" name='price' id='price 'placeholder="Product prijs"  maxlength="50" style="width:50%;" /><br>
+<label for='kort' >Korte omschrijving: </label><br>
+<textarea name="kort" class="custom" id='kort' style="width:50%;" placeholder="Product korte beschrijving"></textarea><br>
+<label for='lang' >Lange omschrijving: </label><br>
+<textarea name="lang" class="custom" id='lang' style="width:50%;" placeholder="Product lange beschrijving"></textarea></br>
 
 <label for='image' >Image padnaam </label><br>
-<input type='text' class="submit" name='padnaam' id='padnaam' placeholder="padnaam"  maxlength="50" style="width:50%;"FVZbr></br>
+<input type='text' class="submit" name='padnaam' id='padnaam' placeholder="Product image"  maxlength="50" style="width:50%;"FVZbr></br>
 
 
 <input type='submit' name='add' class"submit" value='Opslaan' />
  </div>
-</fieldset>
 </form>
 
         </div>
@@ -63,24 +53,16 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 <?php 
 
 
-if(isset($_GET['add']))
+if(isset($_POST['add']))
 {
 
-echo '<script type="text/javascript">alert("testhier!");</script>'; 
-  $categorie = $_GET['categorie'];
-  $lang = $_GET['lang'];
-  $prijs = $_GET['prijs'];
-  $kort = $_GET['kort'];
-  $padnaam = $_GET['image'];
-  $naam = $_GET['name'];
-
- $restult = $database->addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam);
- echo '<script type="text/javascript">alert("testhierq!");</script>'; 
- print_r($restult);
-
-
-
-
+  $categorie = $_POST['categorie'];
+  $lang = $_POST['lang'];
+  $prijs = $_POST['price'];
+  $kort = $_POST['kort'];
+  $padnaam = $_POST['padnaam'];
+  $naam = $_POST['name'];
+  $restult = $database->addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam);
 }
 else
 
