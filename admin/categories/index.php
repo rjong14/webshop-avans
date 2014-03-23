@@ -16,7 +16,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
             <li><a href="../categories/index.php">Categorie</a></li>
             <li><a href="#">order</a></li>
             <li><a href="#">orderregel</a></li>
-            <li><a href="#">menu</a></li>
+             <li><a href="../menu/index.php">menu</a></li>
           </ul>
         </div>
       </div>
@@ -29,6 +29,13 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
           <h2 class="sub-header">Categorieën overzicht</h2>
+
+        <form action="create.php" method="POST">
+            <div style="text-align: right">
+          <input type="submit" class="text-right" name="new" value="Nieuw categorie toevoegen"/>
+          </div>
+        </form>
+      
           <div class="table-responsive">
             <table style="" class="table table-striped">
               <thead>
@@ -47,7 +54,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                         <td><?php echo $categorie['id'] ?></td>
                         <td><?php echo $categorie['naam'] ?></td>
                         <td class="text-right">
-                          <a href="#">
+                          <a href="edit.php?name=<?php echo $categorie['naam'] . '&id=' . $categorie['id'] ?>">
                               <img src="../img/editicon.png" />
                             </a>
                            <a href="delete.php?remove_id=<?php echo $categorie["id"] . '&action=remove&return_url=' . $current_url ?> " onclick="return confirm('Weet u zeker dat u <?php echo $categorie['naam'] ?> wilt verwijderen?');">

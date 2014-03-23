@@ -15,7 +15,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
             <li><a href="../categories/index.php">Categorie</a></li>
             <li><a href="#">order</a></li>
             <li><a href="#">orderregel</a></li>
-            <li><a href="#">menu</a></li>
+             <li><a href="../menu/index.php">menu</a></li>
           </ul>
         </div>
       </div>

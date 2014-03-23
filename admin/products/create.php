@@ -36,7 +36,8 @@ $categories = $database->getAllCategories();
 <label for='categorie' >Product categorie: </label><br>
 
 
-<select id="categorie" name="categorie" class ="custom">
+
+<select style="padding-top:5px" id="categorie" name="categorie" class ="custom">
   <?php
   if($categories != false)  
     {

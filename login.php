@@ -95,7 +95,9 @@ if(isset($_POST['login']))
 {
 	if(isset($_POST['password']) && isset($_POST['username']))
 	{
+
 		$login = $database->checkLogin($_POST['username'], $_POST['password']);
+		print_r($login);
 		if($login != false)
 		{
 			$_SESSION['username'] = $login[0]['gebruikersnaam'];

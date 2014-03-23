@@ -86,6 +86,7 @@ a.close {
 }
 
 /* Input */
+input[type="password"],
 input[type="email"],
 input[type="text"] {
     background: #fff;

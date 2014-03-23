@@ -4,9 +4,29 @@
 	// Created a class called "Queries"
 	class Queries {
 
-		// Created a function to get the institutions from the database
+		public function editUser($id, $nickname, $wachtwoord, $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin)
+		{
+
+			$result = $this->getInstance()->executeQuery("UPDATE gebruikers SET gebruikersnaam = ?, wachtwoord = ?, voornaam = ?, achternaam = ?,  adres = ?,  woonplaats = ?, postcode = ?, email = ?, isAdmin = ? WHERE id = ?", array($nickname, MD5($wachtwoord), $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin, $id));
+			return $result;
+		}
+		public function editCategorie($id, $naam)
+		{
+			$result = $this->getInstance()->executeQuery("UPDATE categorie SET naam = ? WHERE id = ?", array($naam,$id));
+			return $result;
+		}
+		public function editMenuitem($id, $label, $link)
+		{
+			$result = $this->getInstance()->executeQuery("UPDATE menu SET label = ?, link = ? WHERE id = ?", array($label, $link,$id));
+			return $result;
+		}
 		public function getMenuItems() {
 			$result = $this->getInstance()->selectQuery("SELECT * FROM menu", null);
+			return $result;
+		}
+		public function getMenuItem($id) {
+			$result = $this->getInstance()->selectQuery("SELECT * FROM menu where id = ?", array($id));
+			print_r($result);
 			return $result;
 		}
 		public function deleteProduct($id)
@@ -14,7 +34,29 @@
 			$result = $this->getInstance()->executeQuery("DELETE from producten where id = ?", array($id));
 			return $result;
 		}
+		public function deleteItem($id)
+		{
+			$result = $this->getInstance()->executeQuery("DELETE from menu where id = ?", array($id));
+			return $result;
+		}
 
+		public function AddItem($label, $link)
+		{		
+			$result = $this->getInstance()->executeQuery("INSERT INTO menu (label, link) 	values(?,?)", array($label, $link));
+			return $result;
+		}
+		public function addCategorie($naam)
+		{		
+			$result = $this->getInstance()->executeQuery("INSERT INTO categorie (naam) 	values(?)", array($naam));
+			return $result;
+		}
+		public function addUser($nickname, $wachtwoord, $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin)
+		{		
+			
+			$result = $this->getInstance()->executeQuery("INSERT INTO gebruikers (gebruikersnaam, wachtwoord, voornaam, achternaam, adres, woonplaats, postcode, email, isAdmin) 
+			values(?,?,?,?,?,?,?,?,?)", array($nickname, md5($wachtwoord), $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin));
+			return $result;
+		}
 		public function addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam)
 		{
 			$result = $this->getInstance()->executeQuery("INSERT INTO producten (prCategorie, prPrijs, prImage, prNaam, prBeschrijving, prKbeschrijving) 
@@ -58,7 +100,7 @@
 		}
 		public function checkLogin($username, $password)
 		{
-			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruiker,s where gebruikersnaam = ? and wachtwoord = ?", array($username, $password));
+			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruikers where gebruikersnaam = ? and wachtwoord = ?", array($username, md5($password)));
 			return $result;
 		}
 		public function searchResult($name)
@@ -81,6 +123,11 @@
 		public function getProductInfo($id)
 		{
 			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where producten.id = ?", array($id));
+			return $result;
+		}
+		public function getUserInfo($id)
+		{
+			$result = $this->getInstance()->selectQuery("SELECT * FROM gebruikers where id = " . $id, null);
 			return $result;
 		}
 		public function getAllCategories()

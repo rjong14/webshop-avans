@@ -2,7 +2,8 @@
 include '../header.php';
 include '../../queries.php';
 $database = new Queries();
-$users = $database->getAllUsers();
+$items = $database->getMenuItems();
+
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>
@@ -15,7 +16,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
             <li><a href="../categories/index.php">Categorie</a></li>
             <li><a href="#">order</a></li>
             <li><a href="#">orderregel</a></li>
-             <li><a href="../menu/index.php">menu</a></li>
+            <li><a href="../menu/index.php">menu</a></li>
           </ul>
         </div>
       </div>
@@ -27,11 +28,11 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
     <link href="../dashboard.css" rel="stylesheet">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
-          <h2 class="sub-header">Gebruikers overzicht</h2>
+          <h2 class="sub-header">Menu overzicht</h2>
 
         <form action="create.php" method="POST">
             <div style="text-align: right">
-          <input type="submit" class="text-right" name="new" value="Nieuwe gebruiker toevoegen"/>
+          <input type="submit" class="text-right" name="new" value="Nieuw menu-item toevoegen"/>
           </div>
         </form>
       
@@ -40,29 +41,25 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>gebruikersnaam</th>
-                  <th>wachtwoord</th>
-                  <th>voornaam</th>
-                  <th>achternaam</th>
+                  <th>Content</th>
+                  <th>URL</th>
                 </tr>
               </thead>
               <tbody>
                  <?php
-                 if($users != false) {
-                   foreach($users as $user)
+                 if($items != false) {
+                   foreach($items as $item)
                    {
                    ?>
                       <tr>
-                        <td><?php echo $user['id'] ?></td>
-                        <td><?php echo $user['gebruikersnaam'] ?></td>
-                        <td><?php echo $user['wachtwoord'] ?></td>
-                        <td><?php echo $user['voornaam'] ?></td>
-                        <td><?php echo $user['achternaam'] ?></td>
+                        <td><?php echo $item['id'] ?></td>
+                        <td><?php echo $item['label'] ?></td>
+                        <td><?php echo $item['link'] ?></td>
                         <td class="text-right">
-                           <a style="text-decoration: none" href='edit.php?id=<?php echo $user['id'] ?>'>
+                          <a href="edit.php?id=<?php echo $item['id'] ?>">
                               <img src="../img/editicon.png" />
                             </a>
-                            <a style="text-decoration: none" href="delete.php?remove_id=<?php echo $user["id"] . '&action=remove&return_url=' . $current_url ?> " onclick="return confirm('Weet u zeker dat u <?php echo $user['gebruikersnaam'] ?> wilt verwijderen?');">
+                           <a href="delete.php?remove_id=<?php echo $item["id"] . '&action=remove&return_url=' . $current_url ?> " onclick="return confirm('Weet u zeker dat u <?php echo $item['label'] ?> wilt verwijderen?');">
                               <img src="../img/deleteicon.png" />
                             </a>
                         </td>

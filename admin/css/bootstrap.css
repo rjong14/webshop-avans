@@ -233,6 +233,8 @@ th {
   }
   select {
     background: #fff !important;
+    text-align:center;
+
   }
   .navbar {
     display: none;

@@ -91,7 +91,7 @@ if(isset($_POST['edit']))
   $padnaam = $_POST['padnaam'];
   $naam = $_POST['name'];
   $restult = $database->editProduct($product_id, $naam, $categorie, $prijs, $kort, $lang, $padnaam);
-  echo '<script>history.go(0);</script>';
+  
 }
 else
 
