@@ -5,16 +5,15 @@ $database = new Queries();
 $categories = $database->getAllCategories();
 
 ?>
-        <div class="container-fluid">
+       <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="../products/index.php">Producten</a></li>
             <li><a href="../users/index.php">Gebruikers</a></li>
-            <li><a href="../categories/index.php">Categorie</a></li>
-            <li><a href="#">order</a></li>
-            <li><a href="#">orderregel</a></li>
-            <li><a href="#">menu</a></li>
+            <li><a href="../categories/index.php">Categorieën</a></li>
+            <li><a href="../orders/index.php">Orders</a></li>
+             <li><a href="../menu/index.php">Menu</a></li>
           </ul>
         </div>
       </div>
