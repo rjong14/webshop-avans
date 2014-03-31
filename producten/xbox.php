@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include 'product.class.php';
+include '../product.class.php';
 $product_class = new products();
 $products = $product_class->getCategoryGames("xbox");
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
@@ -38,7 +38,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 						<form method="post" action="cart_update.php">
 						<div class="grid_3">
 			  			<div class="prev">
-							<a href="product_page.php?productid=' .$product["id"]. '"><img src="' . $product['prImage'] . '" alt="Product 2" title=""></a>
+							<a href="../product_page.php?productid=' .$product["id"]. '"><img src="../' . $product['prImage'] . '" alt="Product 2" title=""></a>
 			   			</div><!-- .prev -->
 						</div><!-- .grid_3 -->
 				

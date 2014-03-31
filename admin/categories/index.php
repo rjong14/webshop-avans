@@ -35,7 +35,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
         </form>
       
           <div class="table-responsive">
-            <table style="" class="table table-striped">
+            <table style="" class="table table-striped table-hover">
               <thead>
                 <tr>
                   <th>#</th>
@@ -52,7 +52,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                         <td><?php echo $categorie['id'] ?></td>
                         <td><?php echo $categorie['naam'] ?></td>
                         <td class="text-right">
-                          <a href="edit.php?name=<?php echo $categorie['naam'] . '&id=' . $categorie['id'] ?>">
+                          <a style="text-decoration: none;" href="edit.php?name=<?php echo $categorie['naam'] . '&id=' . $categorie['id'] ?>">
                               <img src="../img/editicon.png" />
                             </a>
                            <a href="delete.php?remove_id=<?php echo $categorie["id"] . '&action=remove&return_url=' . $current_url ?> " onclick="return confirm('Weet u zeker dat u <?php echo $categorie['naam'] ?> wilt verwijderen?');">

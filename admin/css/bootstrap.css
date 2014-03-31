@@ -44,6 +44,7 @@ template {
 }
 a {
   background: transparent;
+  text-decoration: none;
 }
 a:active,
 a:hover {
@@ -129,6 +130,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+
 }
 button[disabled],
 html input[disabled] {
@@ -239,9 +241,11 @@ th {
   .navbar {
     display: none;
   }
+
   .table td,
   .table th {
-    background-color: #fff !important;
+    background-color: blue !important;
+
   }
   .btn > .caret,
   .dropup > .btn > .caret {

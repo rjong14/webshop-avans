@@ -1,9 +1,10 @@
 <?php
 include 'header.php';
-$database = new QUeries();
-$product_xbox = $database->getCategoryGamesLimit("xbox");
-$product_playstation = $database->getCategoryGamesLimit("playstation");
-$product_computer = $database->getCategoryGamesLimit("computer");
+include 'product.class.php';
+$product_class = new products();
+$product_xbox = $product_class->getCategoryGamesLimit("xbox");
+$product_playstation = $product_class->getCategoryGamesLimit("playstation");
+$product_computer = $product_class->getCategoryGamesLimit("computer");
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 ?>
 

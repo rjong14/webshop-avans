@@ -45,7 +45,6 @@ $categories = $database->getAllCategories();
           ?>
           <option value=<?php echo $categorie['id'] ?>><?php echo $categorie['naam'] ?></option>
           <?php
-        
       }
     }
 
@@ -63,7 +62,7 @@ $categories = $database->getAllCategories();
 <input type='text' class="submit" name='padnaam' id='padnaam' placeholder="Product image"  maxlength="50" style="width:50%;"FVZbr></br>
 
 
-<input type='submit' name='add' class"submit" value='Opslaan' />
+<input type='submit' name='add' class="submit" value='Opslaan' />
  </div>
 </form>
 

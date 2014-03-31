@@ -12,8 +12,7 @@ if(isset($_GET['action']))
 	
 			$user_id = filter_var($_GET["remove_id"], FILTER_SANITIZE_STRING);
 		   	$database->deleteUser($user_id);
-		   	header('Location:'.$return_url);
-			
+		   	header('Location:'.$return_url);	
 		}
 	}
 }

@@ -70,7 +70,7 @@ $categorie_naam = "";
 <textarea name="lang" class="custom" id='lang' style="width:50%;" placeholder="lang"><?php echo $product_details[0]['prBeschrijving'] ?></textarea></br>
 <label for='image' >Image padnaam </label><br>
 <input type='text' class="submit" name='padnaam' id='padnaam' placeholder="padnaam"  maxlength="50" value='<?php echo $product_details[0]['prImage'] ?>' style="width:50%;"FVZbr></br>
-<input type='submit' name='edit' class"submit" value='Opslaan' />
+<input type='submit' name='edit' class="submit" value='Opslaan' />
  </div>
 </form>
 

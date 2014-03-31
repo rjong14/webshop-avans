@@ -1,7 +1,8 @@
 <?php
 include 'header.php';
-$database = new Queries();
-$products = $database->getCategoryGames("playstation");
+include 'product.class.php';
+$product_class = new products();
+$products = $product_class->getCategoryGames("playstation");
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>

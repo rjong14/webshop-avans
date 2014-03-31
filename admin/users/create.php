@@ -63,7 +63,7 @@ $categories = $database->getAllCategories();
 ]
 </select><br>
 
-<input type='submit' name='add' class"submit" value='Opslaan' />
+<input type='submit' name='add' class="submit" value='Opslaan' />
  </div>
 </form>
 </form>

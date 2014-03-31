@@ -65,7 +65,7 @@ $order_details =  $database->getOrderDetails($order_id);
 
 <label for='price' >Order datum: </label><br>
 <input type='text' class="custom" name='datum' id='datum 'placeholder="Datum"  maxlength="50" value='<?php echo $order_details[0]['datum'] ?>' style="width:50%;" /><br>
-<input type='submit' name='edit' class"submit" value='Opslaan' />
+<input type='submit' name='edit' class="submit" value='Opslaan' />
  </div>
 </form>
 

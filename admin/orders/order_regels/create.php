@@ -60,7 +60,7 @@ $products = $database->getAllProducts();
 <label for='link' >Aantal </label><br>
 <input type='text' class="custom" name='aantal' id='aantal' placeholder="Aantal" maxlength="5" style="width:50%;" /><br>
 <?php echo '<input type="hidden" name="order_id" id="order_id" value="'.$order_id.'" />'?>
-<input type='submit' name='add' class"submit" value='Opslaan' />
+<input type='submit' name='add' class="submit" value='Opslaan' />
  </div>
 </form>
 

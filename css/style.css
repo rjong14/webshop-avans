@@ -5,11 +5,46 @@
 /******************************************************************************
   Grid 1008
 *******************************************************************************/
+
+#navbar {
+    height: 150px;
+}
+#navbar ul.parent{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul.parent li:hover ul.child {
+    display: block;
+    background: none;
+}
+#navbar ul.parent li:hover ul.child li a {
+    background: none;
+    color: black;
+}
+#navbar ul.parent li:hover ul.child li a:hover {
+    text-decoration: underline;    
+}
+#navbar ul.child {
+    margin-top: 30px;
+    position: absolute;
+    display: none;
+
+}
+
+#navbar li {
+    list-style: none;
+    float: left;
+    position: relative;
+}
+#navbar ul li a {
+}
 .container_12 {
     margin-left: auto;
     margin-right: auto;
     width: 1008px;
 }
+
 .grid_1,
 .grid_2,
 .grid_3,
@@ -706,7 +741,7 @@ input[type="submit"]:active {
     -webkit-box-shadow: inset 0px 5px 15px #375c8f;
 }
 
-+
+input[type="text"],
 input[type="password"] {
     background: #fff;
     border: 1px solid #ccc;
@@ -718,7 +753,7 @@ input[type="password"] {
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
-    height: 30px;
+    height: 20px;
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 0 10px;

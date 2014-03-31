@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-$database = new Queries();
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>

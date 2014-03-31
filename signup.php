@@ -64,6 +64,7 @@ function do_alert($msg)
                 </header>
                 </div><!-- .container_12 -->
             </div>
+        </div>
     </section><!-- #main -->
 <?php
 if(isset($_POST['register']))

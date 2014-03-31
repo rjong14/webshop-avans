@@ -3,6 +3,8 @@ include '../header.php';
 include '../../queries.php';
 $database = new Queries();
 $producten = $database->getAllProducts();
+print_r($producten);
+exit;
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>

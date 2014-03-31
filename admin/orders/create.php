@@ -56,7 +56,7 @@ $users = $database->getFullNames();
 <label for='datum' >Datum </label><br>
 <input type='text' class="custom" name='datum' id='datum' placeholder="Datum" maxlength="50" style="width:50%;" value='<?php echo date("Y-m-d H:i:s"); ?>' disabled/><br>
 
-<input type='submit' name='add' class"submit" value='Opslaan' />
+<input type='submit' name='add' class="submit" value='Opslaan' />
  </div>
 </form>
 

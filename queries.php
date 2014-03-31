@@ -4,6 +4,7 @@
 	// Created a class called "Queries"
 	class Queries {
 
+
 		public function editUser($id, $nickname, $wachtwoord, $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin)
 		{
 			$result = $this->getInstance()->executeQuery("UPDATE gebruikers SET gebruikersnaam = ?, wachtwoord = ?, voornaam = ?, achternaam = ?,  adres = ?,  woonplaats = ?, postcode = ?, email = ?, isAdmin = ? WHERE id = ?", array($nickname, MD5($wachtwoord), $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin, $id));
@@ -22,6 +23,13 @@
 		public function editMenuitem($id, $label, $link)
 		{
 			$result = $this->getInstance()->executeQuery("UPDATE menu SET label = ?, link = ? WHERE id = ?", array($label, $link,$id));
+			return $result;
+		}
+		public function getChildren($parent)
+		{
+			$result = $this->getInstance()->selectQuery("SELECT a.id, a.label, a.link, Deriv1.Count FROM `menu` a 
+LEFT OUTER JOIN (SELECT parent, COUNT(*) AS Count FROM `menu` GROUP BY parent) Deriv1 
+ON a.id = Deriv1.parent WHERE a.parent=?", array($parent));
 			return $result;
 		}
 		public function getOrderRegelDetails($id)

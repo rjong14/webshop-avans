@@ -1,4 +1,4 @@
 webshop-avans
 =============
 
-webshop voor wolfhaar
+webshop door Rick de Jong en Louis Hol

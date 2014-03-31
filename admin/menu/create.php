@@ -33,7 +33,7 @@ $database = new Queries();
 <label for='link' >Menu item links </label><br>
 <input type='text' class="custom" name='link' id='link' placeholder="Product naam" maxlength="50" style="width:50%;" /><br>
 
-<input type='submit' name='add' class"submit" value='Opslaan' />
+<input type='submit' name='add' class="submit" value='Opslaan' />
  </div>
 </form>
 

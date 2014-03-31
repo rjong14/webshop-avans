@@ -8,6 +8,10 @@ body {
 }
 
 
+td{
+  background: #EFFBF5;
+}
+
 /*
  * Global add-ons
  */
@@ -54,10 +58,17 @@ select{
 }
 br { clear: left; }
 
-input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
-cursor:pointer;
--webkit-border-radius: 5px;
-border-radius: 5px; }
+input[type=submit] { border-right: #a9a9a9 1px solid;
+  padding-right: 4px;
+  border-top: #a9a9a9 1px solid;
+  padding-left: 4px;
+  font-size: 12px;
+  padding-bottom: 4px;
+  border-left: #a9a9a9 1px solid;
+  padding-top: 4px;
+  border-bottom: #a9a9a9 1px solid;
+
+}
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -84,6 +95,7 @@ a.close {
     color: #777;
     width: 100%
 }
+
 
 /* Input */
 input[type="password"],

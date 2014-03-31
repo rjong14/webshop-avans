@@ -36,7 +36,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
         </form>
       
           <div class="table-responsive">
-            <table style="" class="table table-striped">
+            <table style="" class="table table-striped table-hover">
               <thead>
                 <tr>
                   <th>#</th>

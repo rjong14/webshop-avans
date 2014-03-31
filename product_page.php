@@ -1,7 +1,8 @@
 <?php
 include 'header.php';
-$database = new Queries();
-$product = $database->getProductInfo($_GET['productid']);
+include 'product.class.php';
+$product_class = new products();
+$product = $product_class->getProductInfo($_GET['productid']);
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>

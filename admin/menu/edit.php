@@ -35,7 +35,7 @@ $menu_item_details = $database->getMenuItem($menu_item_id);
 <input type='text' class="custom" name='link' id='link' placeholder="link" value="<?php echo $menu_item_details[0]['link'] ?>" maxlength="50" style="width:50%;" /><br>
 
 
-<input type='submit' name='edit' class"submit" value='Opslaan' />
+<input type='submit' name='edit' class="submit" value='Opslaan' />
  </div>
 </form>
 

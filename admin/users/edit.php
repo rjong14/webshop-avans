@@ -79,7 +79,7 @@ $user_detail = $database->getUserInfo($user_id);
   ?>
 </select><br>
 
-<input type='submit' name='edit' class"submit" value='Opslaan' />
+<input type='submit' name='edit' class="submit" value='Opslaan' />
  </div>
 </form>
 
