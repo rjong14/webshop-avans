@@ -146,7 +146,7 @@ $return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUE
                 path+="<A HREF=\""+href.substring(0,href.indexOf("/"+s[i])+s[i].length+1)+"/\">"+s[i]+"</A> <span></span> ";
                 }
                 i=s.length-1;
-                path+="<A HREF=\""+href.substring(0,href.indexOf(s[i])+s[i].length)+"\">"+s[i]+"</A>";
+                path+="<span class=\"current\" \">"+s[i]+"</span>";
                 var url =  "" + path;
                 document.writeln(url);
             </script>

@@ -17,6 +17,7 @@ function do_alert($msg)
                     if(!isset($_SESSION['username']))
 			 	 	{
 			 	 	?>
+                     <div class="signup">
 		                <form action = "signup.php" method="post">
 		                    	<table>
 		                    		<tr>
@@ -47,6 +48,7 @@ function do_alert($msg)
 					             </table>   	
 					             <input type="submit" value="register" name="register" />				             
 		                    </form>
+                         </div>
 		            <?php
 		            }
 		            else

@@ -208,6 +208,7 @@
     width: 0;
     height: 0;
 }
+    
 
 /*
 /////////////////////////////////    2)- Typography    /////////////////////////
@@ -744,6 +745,7 @@ input[type="submit"]:active {
     -webkit-box-shadow: inset 0px 5px 15px #375c8f;
 }
 
+input[type="email"],
 input[type="text"],
 input[type="password"] {
     background: #fff;
@@ -756,7 +758,7 @@ input[type="password"] {
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     font: normal 12px 'PT Sans', Arial, Verdana, sans-serif;
-    height: 20px;
+    height: 38px;
     margin-top: 5px;
     margin-bottom: 10px;
     padding: 0 10px;
@@ -764,6 +766,12 @@ input[type="password"] {
     //padding: 10px 10px 0 10px;
     color: #777;
     width: 100%
+}
+.signup form table tbody tr td input[type="email"],
+.signup form table tbody tr td input[type="text"],
+.signup form table tbody tr td input[type="password"] {
+ height: 24px;
+    
 }
 input[type="email"]:hover,
 input[type="text"]:hover,
