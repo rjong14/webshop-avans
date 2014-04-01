@@ -1,7 +1,8 @@
-<?php include 'header.php'; include 'product.class.php'; $product_class = new
-products(); $products = $product_class->getCategoryGames("computer");
-$current_url =
-base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+<?php include 'header.php'; 
+include 'product.class.php'; 
+$product_class = new products(); 
+$products = $product_class->getCategoryGames("computer");
+$current_url =base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>
 <section id="main">
@@ -28,12 +29,11 @@ base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 	           	
 		    		
 		    		<div class="cart">
-
+		    		<br><br>
 		   			<button class="add_to_cart">Naar spellen toe</button>
 
 					</div><!-- .cart -->
-	    			<input type="hidden" name="product_id" value=<?php echo $product['id'] ?>/>
-	    			<input type="hidden" name="type" value="add" />
+	    		
 					<input type="hidden" name="return_url" value= <?php echo $current_url ?> />
 					</div><!-- .grid_6 -->
 					<div class="clear"></div>
@@ -60,13 +60,11 @@ base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 	           	
 		    		
 		    		<div class="cart">
-
+		    		<br><br>
 		   			<button class="add_to_cart">Naar spellen toe</button>
 
 					</div><!-- .cart -->
-	    			<input type="hidden" name="product_id" value=<?php echo $product['id'] ?>/>
-	    			<input type="hidden" name="type" value="add" />
-					<input type="hidden" name="return_url" value= <?php echo $current_url ?> />
+	    			
 					</div><!-- .grid_6 -->
 					<div class="clear"></div>
 					</form>
@@ -93,13 +91,11 @@ base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 	           	
 		    		
 		    		<div class="cart">
-
+		    		<br><br>
+					
 		   			<button class="add_to_cart">Naar spellen toe</button>
-
-					</div><!-- .cart -->
-	    			<input type="hidden" name="product_id" value=<?php echo $product['id'] ?>/>
-	    			<input type="hidden" name="type" value="add" />
-					<input type="hidden" name="return_url" value= <?php echo $current_url ?> />
+		   			</div><!-- .cart -->
+	    			
 					</div><!-- .grid_6 -->
 					<div class="clear"></div>
 					</form>

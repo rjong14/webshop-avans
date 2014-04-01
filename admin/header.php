@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(isset($_SESSION['isAdmin']))
+  {
+    if($_SESSION['isAdmin'] == 0)
+      {
+        exit;
+      }
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   

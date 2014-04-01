@@ -2,7 +2,8 @@
 include 'header.php';
 include 'product.class.php';
 $product_class = new products();
-$product = $product_class->getProductInfo($_GET['productid']);
+$product_id = filter_var($_GET['productid'], FILTER_VALIDATE_INT);
+$product = $product_class->getProductInfo($product_id);
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 ?>
