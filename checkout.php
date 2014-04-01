@@ -29,6 +29,46 @@ $database = new Queries();
 								    <div class="list_body">
 									<form class="checkout_or" method="post">
 									    <h3>Checkout as a <?= $_SESSION['username'] ?></h3>
+									    
+						<ul id="cart_nav" class="clearleft">
+                        <li class="clearleft">
+                            <ul class="cart_cont clearleft">
+                               
+
+                                <?php
+                                if(isset($_SESSION['products']) && $_SESSION['products'] != "") 
+                                {
+                                    ?>
+                                    
+                                    <?php
+                                    foreach($_SESSION['products'] as $product)
+                                    {
+                                        ?>
+                                        
+                                        <li class="clearleft">
+                                            <a href="product_page.php?productid=<?php echo $product['id'] ?>" class="prev_cart"><div class="cart_vert"><img src=<?php echo $product['image'] ?> alt="Product 1" title=""></div></a>
+                                            <div class="cont_cart">
+                                                <h4><?php echo $product['name'] ?></h4>
+                                                <div class="price"><?php echo $product['qty'] ?> x <span><?php echo $product['price'] ?></span></div>
+                                            </div>
+                                            
+                                            <div class="clear"></div>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                                else
+                                {
+                                    ?> 
+                                    <li class="no_border recently">Your shopping cart is empty</li>
+                                    <br>
+                                    <br>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
+                        </li>
+                    </ul><!-- .cart_nav -->
 									    <p>Total products : <?= getTotalItems() ?></p>
 									    <p>Total price : € <?= getSessionTotal() ?></p>
 									    <input type="submit" id="checkout" name="checkout" value="checkout">
