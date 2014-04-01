@@ -28,10 +28,16 @@
 		public function getChildren($parent)
 		{
 			$result = $this->getInstance()->selectQuery("SELECT a.id, a.label, a.link, Deriv1.Count FROM `menu` a 
-LEFT OUTER JOIN (SELECT parent, COUNT(*) AS Count FROM `menu` GROUP BY parent) Deriv1 
-ON a.id = Deriv1.parent WHERE a.parent=?", array($parent));
+			LEFT OUTER JOIN (SELECT parent, COUNT(*) AS Count FROM `menu` GROUP BY parent) Deriv1 
+			ON a.id = Deriv1.parent WHERE a.parent=?", array($parent));
 			return $result;
 		}
+		public function getOrderLatestID()
+		{
+			$result = $this->getInstance()->selectQuery("SELECT id from orders order by id desc limit 1", null);
+			return $result;
+		}
+
 		public function getOrderRegelDetails($id)
 		{
 			$result = $this->getInstance()->selectQuery("SELECT order_regel_id, prNaam, aantal FROM orderregel join producten ON producten_id = id WHERE order_id = ?", array($id));

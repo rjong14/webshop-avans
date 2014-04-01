@@ -58,7 +58,7 @@ class DB
 	//methode voor het uitvoeren van overige queries.
 	public function executeQuery($query, $params)
 	{
-		mysqli_report(MYSQLI_REPORT_ALL);
+	
 		//het preparen van de query voor uitvoeren
 		if($stmt = mysqli_prepare($this->conn, $query))
 		{

@@ -11,21 +11,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
         <div class="container_12">
             <div id="content" class="grid_9">
                 <h1 class="page_title">Product List xBox</h1>
-                 
-                <div class="options">
-                  <div class="sort">
-			<span>Sort By</span>
-			<select>
-			    <option>Price</option>
-			    <option>Rating</option>
-			    <option>Name</option>
-			</select>
-			    
-			<a class="sort_up" href="#">&#8593;</a>
-		    </div><!-- .sort -->
-                    
-		    
-                </div><!-- .options -->
+               
                 <div class="clear"></div>
                 
                 <div class="products_list catalog">           
@@ -75,20 +61,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                 </div><!-- .products_list -->
                 <div class="clear"></div>
 	      
-                <div class="pagination">
-		    <ul>
-			<li class="prev"><span>&#8592;</span></li>
-			<li class="curent"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><span>...</span></li>
-			<li><a href="#">100</a></li>
-			<li class="next"><a href="#">&#8594;</a></li>
-		    </ul>
-                </div><!-- .pagination -->
-                <p class="pagination_info">Displaying 1 to 12 (of 100 products)</p>
+           
                 
                 
                 
