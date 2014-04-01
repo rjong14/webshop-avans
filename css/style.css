@@ -15,6 +15,7 @@
     padding: 0;
 }
 
+
 #navbar ul.parent li:hover ul.child {
     display: block;
     background: none;
@@ -41,6 +42,13 @@
 #navbar ul li a {
 }
 */
+.clearleft {
+padding-left: 0 !important;
+float: left !important;
+list-style-type: none !important;
+margin-bottom: 5px;
+}
+
 .container_12 {
     margin-left: auto;
     margin-right: auto;
