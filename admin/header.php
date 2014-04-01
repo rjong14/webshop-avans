@@ -1,8 +1,11 @@
 <?php
 session_start();
-if($_SESSION['isAdmin'] == 0)
+if(isset($_SESSION['isAdmin']))
   {
-    exit;
+    if($_SESSION['isAdmin'] == 0)
+      {
+        exit;
+      }
   }
 ?>
 <!DOCTYPE html>

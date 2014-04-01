@@ -69,21 +69,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                 </div><!-- .products_list -->
                 <div class="clear"></div>
 	      
-                <div class="pagination">
-		    <ul>
-			<li class="prev"><span>&#8592;</span></li>
-			<li class="curent"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><span>...</span></li>
-			<li><a href="#">100</a></li>
-			<li class="next"><a href="#">&#8594;</a></li>
-		    </ul>
-                </div><!-- .pagination -->
-                <p class="pagination_info">Displaying 1 to 12 (of 100 products)</p>
-                
+
                 
                 
                 <div class="clear"></div>

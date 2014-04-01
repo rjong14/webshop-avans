@@ -132,15 +132,18 @@ $return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUE
 <div id = "navbar">
 <?php
                     display_children(0,1);
-                    if($_SESSION['isAdmin'] == 1)
+                    if(isset($_SESSION['isAdmin']))
                     {
-                        ?>
-                        <ul>
-                        <li><a href="../admin">backend</a></li>
-                        <ul>
-                        <?php
+                        if($_SESSION['isAdmin'] == 1)
+                        {
+                            ?>
+                            <ul>
+                            <li><a href="../admin">backend</a></li>
+                            <ul>
+                            <?php
+                        }
                     }
-                    ?>
+                   ?>
                     
 </div>
 </nav><!-- .primary -->
