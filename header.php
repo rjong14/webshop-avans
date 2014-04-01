@@ -133,27 +133,28 @@ $return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUE
                 <nav class="primary">
                     <div class="bg-menu-select"></div>
                     <a class="menu-select" href="#">Catalog</a>
-                    <div id = "navbar">
+                    <!--<div id = "navbar"> zo dat werkt niet louis!-->
                     <?php
                     display_children(0,1);
                     ?>
-                    </div>
+                   <!-- </div> volgens de java en css zit hier heen div-->
                 </nav><!-- .primary -->
             </div><!-- .grid_9 -->
             <p>
+                <div class="breadcrumbs">
             <script>
                 var path = "";
                 var href = document.location.href;
                 var s = href.split("/");
                 for (var i=2;i<(s.length-1);i++) {
-                path+="<A HREF=\""+href.substring(0,href.indexOf("/"+s[i])+s[i].length+1)+"/\">"+s[i]+"</A> -> ";
+                path+="<A HREF=\""+href.substring(0,href.indexOf("/"+s[i])+s[i].length+1)+"/\">"+s[i]+"</A> <span></span> ";
                 }
                 i=s.length-1;
                 path+="<A HREF=\""+href.substring(0,href.indexOf(s[i])+s[i].length)+"\">"+s[i]+"</A>";
                 var url =  "" + path;
                 document.writeln(url);
             </script>
-
+                </div>
             </p>
         </div>
         
@@ -167,18 +168,18 @@ function display_children($parent, $level, $bool = null) {
     $result = $database->getChildren($parent);
 if($bool == null)
 {
-    echo "<ul class='parent'>"; 
+    echo "<ul class='parents'>"; 
 }
 else
 {
-    echo "<ul class='child'>"; 
+    echo "<ul class='sub'>"; 
 }
- 
+    
 foreach($result as $menuitem)
     {
         if($menuitem['Count'] > 0)
          {
-         echo "<li><a href='" . $menuitem['link'] . ".php'>" . $menuitem['label'] . "</a>"; 
+         echo "<li class='parent'><a href='" . $menuitem['link'] . ".php'>" . $menuitem['label'] . "</a>"; 
          display_children($menuitem['id'], $level + 1, true); 
          echo "</li>"; 
          } 
