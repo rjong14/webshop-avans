@@ -781,6 +781,10 @@ input[type="password"] {
  height: 24px;
     
 }
+.cart input[type="text"] {
+ height: 24px;   
+    
+}
 input[type="email"]:hover,
 input[type="text"]:hover,
 textarea:hover {
@@ -1249,6 +1253,9 @@ form.search:hover .search_button {
 }
 .cart_cont .close {
     float: left;
+}
+.cart span {
+    margin: 10px;
 }
 .cart_cont a.view_cart,
 .cart_cont a.checkout {
