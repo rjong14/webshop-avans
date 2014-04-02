@@ -32,10 +32,10 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 <form = "create.php" method="POST">
 <div class="custom">
 <label for='name' >Menu-item label </label><br>
-<input type='text' class="custom" name='label' id='label' placeholder="label" value="<?php echo $menu_item_details[0]['label'] ?>" maxlength="50" style="width:50%;" /><br>
+<input type='text' class="custom" name='label' id='label' placeholder="Menu item label" value="<?php echo $menu_item_details[0]['label'] ?>" maxlength="50" style="width:50%;" /><br>
 
 <label for='name' >Menu-item link </label><br>
-<input type='text' class="custom" name='link' id='link' placeholder="link" value="<?php echo $menu_item_details[0]['link'] ?>" maxlength="50" style="width:50%;" /><br>
+<input type='text' class="custom" name='link' id='link' placeholder="Menu item link" value="<?php echo $menu_item_details[0]['link'] ?>" maxlength="50" style="width:50%;" /><br>
 <label for='parent' >Menu item Parent </label><br>
 <select id="parent" name="parent" class ="custom">
   <?php

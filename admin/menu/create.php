@@ -29,10 +29,10 @@ $menus = $database->getMenuItems();
 <form = "create.php" method="POST">
 <div class="custom">
 <label for='label' >Menu item tekst</label><br>
-<input type='text' class="custom" name='label' id='label' placeholder="Product naam" maxlength="50" style="width:50%;" /><br>
+<input type='text' class="custom" name='label' id='label' placeholder="Menu item Text" maxlength="50" style="width:50%;" /><br>
 
 <label for='link' >Menu item links </label><br>
-<input type='text' class="custom" name='link' id='link' placeholder="Product naam" maxlength="50" style="width:50%;" /><br>
+<input type='text' class="custom" name='link' id='link' placeholder="Menu item links" maxlength="50" style="width:50%;" /><br>
 
 <label for='parent' >Menu item Parent </label><br>
 
