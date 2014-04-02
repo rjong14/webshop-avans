@@ -3,6 +3,7 @@ include '../header.php';
 include '../../queries.php';
 $database = new Queries();
 $categorie_id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
+$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 if(isset($_GET['name'])) {
   $categorie_naam = $_GET['name'];
 }
@@ -49,11 +50,12 @@ if(isset($_POST['edit']))
 
   $naam = $_POST['name'];
   $restult = $database->editCategorie($categorie_id, $naam);
-}
-else
-
-{
-  echo "tsst";
+  ?>
+  <script type="text/javascript">
+  var newLocation = "<?php echo base64_decode($current_url); ?>";
+  window.location = newLocation;
+  </script>
+  <?php
 }
 include '../footer.php';
 ?>

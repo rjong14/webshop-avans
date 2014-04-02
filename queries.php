@@ -82,9 +82,9 @@
 			$result = $this->getInstance()->executeQuery("DELETE from orderregel where order_id = ?", array($id));
 			return $result;
 		}
-		public function deleteProduct($id)
+		public function deleteProduct($id, $date)
 		{
-			$result = $this->getInstance()->executeQuery("DELETE from producten where id = ?", array($id));
+			$result = $this->getInstance()->executeQuery("UPDATE producten SET deleted_at = ? WHERE id = ?", array($date, $id));
 			return $result;
 		}
 		public function deleteItem($id)
@@ -126,10 +126,9 @@
 				values(?,?,?,?,?,?,?)", array($categorie, $prijs, $padnaam, $naam, $lang, $kort, $isurl));
 			return $result;
 		}
-		public function editProduct($id, $naam, $categorie, $prijs, $kort, $lang, $padnaam)
+		public function editProduct($id, $naam, $categorie, $prijs, $kort, $lang, $padnaam, $isurl)
 		{
-		
-			$result = $this->getInstance()->executeQuery("UPDATE producten SET prNaam = ?, prCategorie = ?, prPrijs = ?, prKbeschrijving = ?,  prBeschrijving = ?,  prImage = ? WHERE id = ?", array($naam, $categorie, $prijs, $kort, $lang, $padnaam, $id));
+			$result = $this->getInstance()->executeQuery("UPDATE producten SET prNaam = ?, prCategorie = ?, prPrijs = ?, prKbeschrijving = ?,  prBeschrijving = ?,  prImage = ?, isURL = ? WHERE id = ?", array($naam, $categorie, $prijs, $kort, $lang, $padnaam, $isurl, $id));
 			return $result;
 		}
 		public function deleteUser($id)
@@ -149,16 +148,16 @@
 		}
 		public function getAllProducts()
 		{
-			$result = $this->getInstance()->selectQuery("SELECT id, isURL, prCategorie, prNaam, left(prBeschrijving,40) as prBeschrijving, left(prBeschrijving,20) as prKbeschrijving, prImage, prPrijs FROM producten", null);
+			$result = $this->getInstance()->selectQuery("SELECT id, isURL, prCategorie, prNaam, left(prBeschrijving,40) as prBeschrijving, left(prBeschrijving,20) as prKbeschrijving, prImage, prPrijs FROM producten where deleted_at is NULL", null);
 			return $result;
 		}
 		public function getCategoryGamesLimit($category) {
-			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, isURL, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ? LIMIT 4", array($category));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, isURL, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ? and deleted_at is NULL LIMIT 4", array($category));
 			return $result;
 		}
 
 		public function getCategoryGames($category) {
-			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, isURL, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ?", array($category));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, isURL, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ? and deleted_at is NULL", array($category));
 			return $result;
 		}
 		public function checkLogin($username, $password)

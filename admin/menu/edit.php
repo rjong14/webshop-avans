@@ -4,6 +4,7 @@ include '../../queries.php';
 $database = new Queries();
 $menu_item_id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 $menu_item_details = $database->getMenuItem($menu_item_id);
+$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 ?>
        <div class="container-fluid">
       <div class="row">
@@ -52,11 +53,12 @@ if(isset($_POST['edit']))
   $link = $_POST['link'];
 
   $restult = $database->editMenuitem($menu_item_id, $label, $link);
-}
-else
-
-{
-  echo "tsst";
+  ?>
+  <script type="text/javascript">
+  var newLocation = "<?php echo base64_decode($current_url); ?>";
+  window.location = newLocation;
+  </script>
+  <?php
 }
 include '../footer.php';
 ?>

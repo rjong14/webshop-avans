@@ -11,7 +11,7 @@ if(isset($_GET['action']))
 		{
 	
 			$product_id = filter_var($_GET["remove_id"], FILTER_SANITIZE_STRING);
-		   	$database->deleteProduct($product_id);
+		   	$database->deleteProduct($product_id, date("Y-m-d H:i:s"));
 		   	header('Location:'.$return_url);
 			
 		}

@@ -65,8 +65,14 @@ $categorie_naam = "";
 <textarea name="kort" class="custom" id='kort' style="width:50%;" placeholder="kort"><?php echo $product_details[0]['prKbeschrijving'] ?></textarea><br>
 <label for='lang' >Lange omschrijving: </label><br>
 <textarea name="lang" class="custom" id='lang' style="width:50%;" placeholder="lang"><?php echo $product_details[0]['prBeschrijving'] ?></textarea></br>
+
 <label for='image' >Image padnaam </label><br>
 <input type='text' class="submit" name='padnaam' id='padnaam' placeholder="padnaam"  maxlength="50" value='<?php echo $product_details[0]['prImage'] ?>' style="width:50%;"FVZbr></br>
+
+<label for='image' >Image URL : </label>
+<input type='checkbox' name='isurl' id='isurl' <?php if($product_details[0]['isURL'] == 1) { echo "checked"; } ?>></br>
+
+
 <input type='submit' name='edit' class="submit" value='Opslaan' />
  </div>
 </form>
@@ -85,7 +91,27 @@ if(isset($_POST['edit']))
   $kort = $_POST['kort'];
   $padnaam = $_POST['padnaam'];
   $naam = $_POST['name'];
-  $restult = $database->editProduct($product_id, $naam, $categorie, $prijs, $kort, $lang, $padnaam);
+  $isurl = 0;
+  if(isset($_POST['isurl']))
+  {
+    if($_POST['isurl'] == "on")
+    {
+      $isurl = 1;
+    }
+    else
+    {
+      $isurl = 0;
+    }
+  }
+  $restult = $database->editProduct($product_id, $naam, $categorie, $prijs, $kort, $lang, $padnaam, $isurl);
+  ?>
+
+
+  <script type="text/javascript">
+  var newLocation = "<?php echo base64_decode($current_url); ?>";
+  window.location = newLocation;
+  </script>
+  <?php
   
 }
 else

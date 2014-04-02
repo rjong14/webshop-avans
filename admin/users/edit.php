@@ -100,7 +100,12 @@ if(isset($_POST['edit']))
    $email =  $_POST['email'];
    $isAdmin = $_POST['admin'];
   $result =  $database->editUser($id, $nickname, $wachtwoord, $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin);
-  echo '<script>history.go(0);</script>';
+  ?>
+  <script type="text/javascript">
+  var newLocation = "<?php echo base64_decode($current_url); ?>";
+  window.location = newLocation;
+  </script>
+  <?php
 }
 
 include '../footer.php';

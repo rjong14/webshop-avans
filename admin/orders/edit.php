@@ -3,7 +3,7 @@ include '../header.php';
 include '../../queries.php';
 $database = new Queries();
 $order_id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
-
+$current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 $users = $database->getFullNames();
 $order_details =  $database->getOrderDetails($order_id);
@@ -80,10 +80,13 @@ if(isset($_POST['edit']))
   $description = $_POST['beschrijving'];
   $date = $_POST['datum'];
   $result = $database->editOrder($order_id, $user_id, $description, $date);
+  ?>
+  <script type="text/javascript">
+  var newLocation = "<?php echo base64_decode($current_url); ?>";
+  window.location = newLocation;
+  </script>
+  <?php
 }
-else
-{
-  echo "tsst";
-}
+
 include '../footer.php';
 ?>
