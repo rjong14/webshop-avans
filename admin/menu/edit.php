@@ -4,7 +4,9 @@ include '../../queries.php';
 $database = new Queries();
 $menu_item_id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 $menu_item_details = $database->getMenuItem($menu_item_id);
+$menus = $database->getMenuItems();
 $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+
 ?>
        <div class="container-fluid">
       <div class="row">
@@ -34,6 +36,44 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 
 <label for='name' >Menu-item link </label><br>
 <input type='text' class="custom" name='link' id='link' placeholder="link" value="<?php echo $menu_item_details[0]['link'] ?>" maxlength="50" style="width:50%;" /><br>
+<label for='parent' >Menu item Parent </label><br>
+<select id="parent" name="parent" class ="custom">
+  <?php
+
+  if($menu_item_details[0]['parent'] == 0)
+  {
+    ?>
+    <option value=0 selected>Geen</option>
+    <?php
+  }
+  else
+  {
+    ?> 
+    <option value=0>Geen</option>
+     <?php
+  }
+  if($menus != false)  
+    {
+      foreach($menus as $menu)
+      {
+        if($menu['id'] == $menu_item_details[0]['parent'])
+        {
+          ?>
+          <option value=<?php echo $menu['id'] ?> selected><?php echo $menu['label'] ?></option>
+          <?php
+        }
+        else
+        {
+          ?>
+          <option value=<?php echo $menu['id'] ?>><?php echo $menu['label'] ?></option>
+          <?php
+        }
+      }
+    }
+
+  ?>
+</select><br>
+
 
 
 <input type='submit' name='edit' class="submit" value='Opslaan' />
@@ -51,8 +91,9 @@ if(isset($_POST['edit']))
 
   $label = $_POST['label'];
   $link = $_POST['link'];
-
-  $restult = $database->editMenuitem($menu_item_id, $label, $link);
+  $parent = $_POST['parent'];
+  
+  $restult = $database->editMenuitem($menu_item_id, $label, $link, $parent);
   ?>
   <script type="text/javascript">
   var newLocation = "<?php echo base64_decode($current_url); ?>";

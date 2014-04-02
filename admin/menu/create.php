@@ -2,6 +2,7 @@
 include '../header.php';
 include '../../queries.php';
 $database = new Queries();
+$menus = $database->getMenuItems();
 
 ?>
    <div class="container-fluid">
@@ -33,6 +34,28 @@ $database = new Queries();
 <label for='link' >Menu item links </label><br>
 <input type='text' class="custom" name='link' id='link' placeholder="Product naam" maxlength="50" style="width:50%;" /><br>
 
+<label for='parent' >Menu item Parent </label><br>
+
+
+
+<select style="padding-top:5px" id="parent" name="parent" class ="custom">
+  <option value=0>Geen</option>
+  <?php
+
+  if($menus != false)  
+    {
+      foreach($menus as $menu)
+      {
+          ?>
+          <option value=<?php echo $menu['id'] ?>><?php echo $menu['label'] ?></option>
+          <?php
+      }
+    }
+
+  ?>
+</select><br>
+
+
 <input type='submit' name='add' class="submit" value='Opslaan' />
  </div>
 </form>
@@ -47,7 +70,8 @@ if(isset($_POST['add']))
 {
   $label = $_POST['label'];
   $link = $_POST['link'];
-  $restult = $database->AddItem($label, $link);
+  $parent = $_POST['parent'];
+  $result = $database->AddItem($label, $link, $parent);
 }
 else
 {

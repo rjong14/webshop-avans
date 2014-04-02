@@ -49,11 +49,11 @@ $categories = $database->getAllCategories();
 <input type='text' class="custom" name='city' id='city 'placeholder="city"  maxlength="50"  style="width:50%;" /><br>
 
 <label for='zip' >Postcode </label><br> 
-<input type='text' class="custom" name='zip' id='zip' placeholder="city"  maxlength="50"  style="width:50%;" /><br>
+<input type='text' class="custom" name='zip' id='zip' placeholder="zip"  maxlength="50"  style="width:50%;" /><br>
 
 
 <label for='email' >Email </label><br> 
-<input type='text' class="custom" name='email' id='email' placeholder="city"  maxlength="50"  style="width:50%;" /><br>
+<input type='text' class="custom" name='email' id='email' placeholder="email"  maxlength="50"  style="width:50%;" /><br>
 
 
 <label for='admin' >Admin </label><br> 

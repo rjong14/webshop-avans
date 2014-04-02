@@ -20,9 +20,9 @@
 			$result = $this->getInstance()->executeQuery("UPDATE orders SET gebrID = ?, beschrijving = ?, datum = ? WHERE id = ?", array($user_id, $beschrijving, $datum, $order_id));
 			return $result;
 		}
-		public function editMenuitem($id, $label, $link)
+		public function editMenuitem($id, $label, $link, $parent)
 		{
-			$result = $this->getInstance()->executeQuery("UPDATE menu SET label = ?, link = ? WHERE id = ?", array($label, $link,$id));
+			$result = $this->getInstance()->executeQuery("UPDATE menu SET label = ?, link = ?, parent = ? WHERE id = ?", array($label, $link, $parent, $id));
 			return $result;
 		}
 		public function getChildren($parent)
@@ -64,7 +64,6 @@
 		}
 		public function getMenuItem($id) {
 			$result = $this->getInstance()->selectQuery("SELECT * FROM menu where id = ?", array($id));
-			print_r($result);
 			return $result;
 		}
 		public function deleteOrder($id)
@@ -93,9 +92,9 @@
 			return $result;
 		}
 
-		public function AddItem($label, $link)
+		public function AddItem($label, $link, $parent)
 		{		
-			$result = $this->getInstance()->executeQuery("INSERT INTO menu (label, link) 	values(?,?)", array($label, $link));
+			$result = $this->getInstance()->executeQuery("INSERT INTO menu (label, link, parent) 	values(?,?,?)", array($label, $link, $parent));
 			return $result;
 		}
 		public function addCategorie($naam)

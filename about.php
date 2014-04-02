@@ -9,6 +9,7 @@ include 'header.php';
             <div class="text_block">
                 <br>
                 <p>Deze webshop is gemaakt door Louis Hol en Rick de Jong, in opdracht van Avans hogeschool</p>
+                <p>Om bij de backend te komen moet er eerst ingelogt worden en vervolgens staat er een kopje "Backend" bij in het menu</P
             </div>
         </div>
 </section>
