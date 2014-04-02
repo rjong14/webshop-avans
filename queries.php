@@ -120,10 +120,10 @@
 			values(?,?,?,?,?,?,?,?,?)", array($nickname, md5($wachtwoord), $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin));
 			return $result;
 		}
-		public function addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam)
+		public function addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam, $isurl)
 		{
-			$result = $this->getInstance()->executeQuery("INSERT INTO producten (prCategorie, prPrijs, prImage, prNaam, prBeschrijving, prKbeschrijving) 
-				values(?,?,?,?,?,?)", array($categorie, $prijs, $padnaam, $naam, $lang, $kort));
+			$result = $this->getInstance()->executeQuery("INSERT INTO producten (prCategorie, prPrijs, prImage, prNaam, prBeschrijving, prKbeschrijving, isURL) 
+				values(?,?,?,?,?,?,?)", array($categorie, $prijs, $padnaam, $naam, $lang, $kort, $isurl));
 			return $result;
 		}
 		public function editProduct($id, $naam, $categorie, $prijs, $kort, $lang, $padnaam)
@@ -149,16 +149,16 @@
 		}
 		public function getAllProducts()
 		{
-			$result = $this->getInstance()->selectQuery("SELECT id, prCategorie, prNaam, left(prBeschrijving,40) as prBeschrijving, left(prBeschrijving,20) as prKbeschrijving, prImage, prPrijs FROM producten", null);
+			$result = $this->getInstance()->selectQuery("SELECT id, isURL, prCategorie, prNaam, left(prBeschrijving,40) as prBeschrijving, left(prBeschrijving,20) as prKbeschrijving, prImage, prPrijs FROM producten", null);
 			return $result;
 		}
 		public function getCategoryGamesLimit($category) {
-			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ? LIMIT 4", array($category));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, isURL, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ? LIMIT 4", array($category));
 			return $result;
 		}
 
 		public function getCategoryGames($category) {
-			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ?", array($category));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, isURL, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where naam = ?", array($category));
 			return $result;
 		}
 		public function checkLogin($username, $password)
@@ -185,7 +185,7 @@
 		}
 		public function getProductInfo($id)
 		{
-			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where producten.id = ?", array($id));
+			$result = $this->getInstance()->selectQuery("SELECT producten.id, prCategorie, isURL, prNaam, prBeschrijving, prKbeschrijving, prImage, prPrijs, naam FROM producten JOIN categorie on producten.prCategorie = categorie.id where producten.id = ?", array($id));
 			return $result;
 		}
 		public function getUserInfo($id)

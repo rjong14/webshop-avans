@@ -59,7 +59,10 @@ $categories = $database->getAllCategories();
 <textarea name="lang" class="custom" id='lang' style="width:50%;" placeholder="Product lange beschrijving"></textarea></br>
 
 <label for='image' >Image padnaam </label><br>
-<input type='text' class="submit" name='padnaam' id='padnaam' placeholder="Product image"  maxlength="50" style="width:50%;"FVZbr></br>
+<input type='text' class="submit" name='padnaam' id='padnaam' placeholder="Product image" style="width:50%;"></br>
+
+<label for='image' >Image URL : </label>
+<input type='checkbox' name='isurl' id='isurl' ></br>
 
 
 <input type='submit' name='add' class="submit" value='Opslaan' />
@@ -81,7 +84,12 @@ if(isset($_POST['add']))
   $kort = $_POST['kort'];
   $padnaam = $_POST['padnaam'];
   $naam = $_POST['name'];
-  $restult = $database->addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam);
+  $isurl = 0;
+  if(isset($_POST['isurl']))
+  {
+    $isurl = 1;
+  }
+  $restult = $database->addProduct($naam, $categorie, $prijs, $kort, $lang, $padnaam, $isurl);
 }
 else
 

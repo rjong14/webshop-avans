@@ -25,6 +25,11 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                 {
 		                foreach($products as $product)
 						{
+								$src = "../";
+								if($product['isURL'] ==1)
+								{
+									$src="";
+								}
 								?>
 							  	<article>
 								<form method="post" action="../cart_update.php">
@@ -65,10 +70,6 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
     		<div class="clear"></div>
                 </div><!-- .products_list -->
                 <div class="clear"></div>
-	      
-             
-                
-                
                 <div class="clear"></div>
             </div><!-- #content -->
             

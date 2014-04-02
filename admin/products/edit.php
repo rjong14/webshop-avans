@@ -59,9 +59,6 @@ $categorie_naam = "";
 
   ?>
 </select><br>
-
-
-
 <label for='price' >Product prijs: </label><br>
 <input type='text' class="custom" name='price' id='price 'placeholder="prijs"  maxlength="50" value='<?php echo $product_details[0]['prPrijs'] ?>' style="width:50%;" /><br>
 <label for='kort' >Korte omschrijving: </label><br>
@@ -73,9 +70,8 @@ $categorie_naam = "";
 <input type='submit' name='edit' class="submit" value='Opslaan' />
  </div>
 </form>
-
-        </div>
-      </div>
+  </div>
+  </div>
     </div>
 <?php 
 
