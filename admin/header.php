@@ -7,6 +7,10 @@ if(isset($_SESSION['isAdmin']))
         exit;
       }
   }
+  else
+  {
+    exit;
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,17 +53,7 @@ if(isset($_SESSION['isAdmin']))
           </button>
           <a class="navbar-brand" href="#">Webshop</a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
+
       </div>
     </div>
 

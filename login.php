@@ -97,18 +97,18 @@ if(isset($_POST['login']))
 	{
 
 		$login = $database->checkLogin($_POST['username'], $_POST['password']);
-		print_r($login);
 		if($login != false)
 		{
 			$_SESSION['username'] = $login[0]['gebruikersnaam'];
 			$_SESSION['userid'] = $login[0]['id'];
 			if($login[0]['isAdmin'] == 1)
 			{
-				$_SESSION['isAdmin'] == 1;
+
+				$_SESSION['isAdmin'] = 1;
 			}
 			else
 			{
-				$_SESSION['isAdmin'] == 0;
+				$_SESSION['isAdmin'] = 0;
 			}
 			echo '<script>
 				  location.reload();
