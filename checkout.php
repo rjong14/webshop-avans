@@ -69,7 +69,8 @@ $database = new Queries();
                             </ul>
                         </li>
                     </ul><!-- .cart_nav -->
-									    <p>Total products : <?= getTotalItems() ?></p>
+
+									    <p> products : <?= getTotalItems() ?></p>
 									    <p>Total price : € <?= getSessionTotal() ?></p>
 									    <input type="submit" id="checkout" name="checkout" value="checkout">
 									</form>
