@@ -59,7 +59,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 							</div><!-- .grid_6 -->
 							<div class="clear"></div>
 							</form>
-			    			</article>';
+			    			</article>
 			    			<?php
 					}
 				}
@@ -68,30 +68,12 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
            <article>
     		<div class="clear"></div>
                 </div><!-- .products_list -->
-                <div class="clear"></div>
-	      
-
-                
+                <div class="clear"></div>       
                 
                 <div class="clear"></div>
             </div><!-- #content -->
             
-            <div id="sidebar" class="grid_3">
-                <aside id="categories_nav">
-		    <header class="aside_title">
-                        <h3>Categories</h3>
-                    </header>
-
-		    <nav class="right_menu">
-			<ul>
-			    <li><a href="#">PC</a></li>
-			    <li><a href="#">Playstation</a></li>
-			    <li class="current"><a href="#">XBOX</a></li>
-			</ul>
-		    </nav><!-- .right_menu -->
-                </aside><!-- #categories_nav -->
-
-            </div><!-- .sidebar -->
+         
             <div class="clear"></div>
         </div><!-- .container_12 -->
     </section><!-- #main -->

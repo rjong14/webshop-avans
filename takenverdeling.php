@@ -24,13 +24,13 @@ include 'header.php';
         <td>2</td>
         <td>Op tijd ingeleverd en voldoet aan algemene voorwaarden (zie hierboven) </td>
         <td>Rick/Louis</td>
-        <td class="nee"></td>
+        <td class="ja"></td>
     </tr>
     <tr>
         <td>4</td>
         <td>Ontwerp webshop (Schets duidelijk beeld: DKD?, EER in jpg vorm, Sitemap?)</td>
         <td>Rick</td>
-        <td class="nee"></td>
+        <td class="ja"></td>
     </tr>
     <tr>
         <td>5</td>

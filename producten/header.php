@@ -9,58 +9,58 @@ $return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUE
 <meta charset="utf-8">
 
 <title>Home</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-<link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
 
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../js/jquery-1.8.3.min.js"><\/script>')</script>
-<script src="../js/html5.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/radio.js"></script>
-<script src="../js/checkbox.js"></script>
-<script src="../js/selectBox.js"></script>
-<script src="../js/jquery.carouFredSel-6.2.0-packed.js"></script>
-<script src="../js/jquery.touchSwipe.min.js"></script>
-<script src="../js/jquery.jqzoom-core.js"></script>
-<script src="../js/jquery.transit.js"></script>
-<script src="../js/jquery.easing.1.2.js"></script>
-<script src="../js/jquery.anythingslider.js"></script>
-<script src="../js/jquery.anythingslider.fx.js"></script>
-</head>
-<body>
-<div id="top">
-<div class="container_12">
-<div class="grid_9">
-<nav>
-<a class="menu-open" href="#">Menu</a>
-<ul>
-<li class="current"><a href="../index.php">Home</a></li>
-<li><a href="../shopping_cart.php">Shopping cart (<?php echo countCart(); ?>)</a></li>
-<li><a href="../login.php">Log In</a></li>
-<li><a href="../signup.php">Sign Up</a></li>
-</ul>
-</nav>
-</div><!-- .grid_9 -->
-</div>
-</div><!-- #top -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/jquery-1.8.3.min.js"><\/script>')</script>
+    <script src="../js/html5.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/radio.js"></script>
+    <script src="../js/checkbox.js"></script>
+    <script src="../js/selectBox.js"></script>
+    <script src="../js/jquery.carouFredSel-6.2.0-packed.js"></script>
+    <script src="../js/jquery.touchSwipe.min.js"></script>
+    <script src="../js/jquery.jqzoom-core.js"></script>
+    <script src="../js/jquery.transit.js"></script>
+    <script src="../js/jquery.easing.1.2.js"></script>
+    <script src="../js/jquery.anythingslider.js"></script>
+    <script src="../js/jquery.anythingslider.fx.js"></script>
+    </head>
+    <body>
+    <div id="top">
+    <div class="container_12">
+    <div class="grid_9">
+    <nav>
+    <a class="menu-open" href="#">Menu</a>
+    <ul>
+    <li class="current"><a href="../index.php">Home</a></li>
+    <li><a href="../shopping_cart.php">Shopping cart (<?php echo countCart(); ?>)</a></li>
+    <li><a href="../login.php">Log In</a></li>
+    <li><a href="../signup.php">Sign Up</a></li>
+    </ul>
+    </nav>
+    </div><!-- .grid_9 -->
+    </div>
+    </div><!-- #top -->
 
-<header id="branding">
-<div class="container_12">
-<div class="grid_3">
-<hgroup>
-<h1 id="site_logo"><a href="../index.php" title=""><img src="../img/gamezlogo.png" alt="GAMEZ"></a></h1>
-<h2 id="site_description">FOR THE BEST GAMEZ</h2>
-</hgroup>
-</div><!-- .grid_3 -->
+                    <header id="branding">
+                    <div class="container_12">
+                    <div class="grid_3">
+                    <hgroup>
+                    <h1 id="site_logo"><a href="../index.php" title=""><img src="../img/gamezlogo.png" alt="GAMEZ"></a></h1>
+                    <h2 id="site_description">FOR THE BEST GAMEZ</h2>
+                    </hgroup>
+                    </div><!-- .grid_3 -->
 
-<div class="grid_9">
-<div class="top_header">
-<div class="welcome">
-<?php
+                    <div class="grid_9">
+                    <div class="top_header">
+                    <div class="welcome">
+                    <?php
                             if(isset($_SESSION['username']))
                             {
                                 echo 'Welcome ' . $_SESSION['username'];
