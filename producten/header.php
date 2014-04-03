@@ -69,98 +69,104 @@ $return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUE
                             {
                                 echo 'Welcome visitor you can <a href="../login.php">login</a> or <a href="../signup.php">create an account</a>.';
                             }
-                        ?>
-</div><!-- .welcome -->
-<ul id="cart_nav">
-<li>
-<a class="cart_li" href="../shopping_cart.php">
-<div class="cart_ico"></div>
-<span>€<?php echo getSessionTotal(); ?></span>
-</a>
-<ul class="cart_cont">
+                            ?>
+                            </div><!-- .welcome -->
+                            <ul id="cart_nav">
+                            <li>
+                            <a class="cart_li" href="../shopping_cart.php">
+                            <div class="cart_ico"></div>
+                            <span>€<?php echo getSessionTotal(); ?></span>
+                            </a>
+                            <ul class="cart_cont">
 
-<?php
+                            <?php
                                 if(isset($_SESSION['products']) && $_SESSION['products'] != "")
                                 {
-                                    ?>
-<li class="no_border recently">Recently added item(s)</li>
-<?php
+                                     ?>
+                                    <li class="no_border recently">Recently added item(s)</li>
+                                    <?php
                                     foreach($_SESSION['products'] as $product)
                                     {
+                                            $src = "../";
+                                            if($product['isurl'] ==1)
+                                            {
+                                                $src="";
+                                            }
+                                         
                                         ?>
-<li>
-<a href="../product_page.php?productid=<?php echo $product['id'] ?>" class="prev_cart"><div class="cart_vert"><img src=<?php echo "../" . $product['image'] ?> alt="Product 1" title=""></div></a>
-<div class="cont_cart">
-<h4><?php echo $product['name'] ?></h4>
-<div class="price"><?php echo $product['qty'] ?> x <span><?php echo $product['price'] ?></span></div>
-</div>
-<a title="close" class="close" href="../cart_update.php?removep=<?php echo $product["id"] . '&return_url=' . $return_url ?>"></a>
-<div class="clear"></div>
-</li>
-<?php
+                                            <li>
+                                            <a href="../product_page.php?productid=<?php echo $product['id'] ?>" class="prev_cart"><div class="cart_vert"><img src=<?php echo $src . $product['image'] ?> alt="Product 1" title=""></div></a>
+                                            <div class="cont_cart">
+                                            <h4><?php echo $product['name'] ?></h4>
+                                            <div class="price"><?php echo $product['qty'] ?> x <span><?php echo $product['price'] ?></span></div>
+                                            </div>
+                                            <a title="close" class="close" href="../cart_update.php?removep=<?php echo $product["id"] . '&return_url=' . $return_url ?>"></a>
+                                            <div class="clear"></div>
+                                            </li>
+                                        <?php
                                     }
                                 }
                                 else
                                 {
                                     ?>
-<li class="no_border recently">Your shopping cart is empty</li>
-<br>
-<br>
-<?php
+                                    <li class="no_border recently">Your shopping cart is empty</li>
+                                    <br>
+                                    <br>
+                                    <?php
                                 }
                                 ?>
 
+                                <li class="no_border">
+                                <a href="../shopping_cart.php" class="view_cart">View shopping cart</a>
+                                <a href="../checkout.php" class="checkout">Procced to Checkout</a>
+                                </li>
+                                </ul>
+                                </li>
+                                </ul><!-- .cart_nav -->
 
-<li class="no_border">
-<a href="../shopping_cart.php" class="view_cart">View shopping cart</a>
-<a href="../checkout.php" class="checkout">Procced to Checkout</a>
-</li>
-</ul>
-</li>
-</ul><!-- .cart_nav -->
-
-<form class="search" action="../search.php">
-<input type="submit" class="search_button" value=""></a>
-<input type="text" name="search" class="search_form" value="" placeholder="Search entire store here...">
-</form><!-- .search -->
-</div><!-- .top_header -->
-</div><!-- .grid_9 -->
-<div class="grid_9 primary-box">
-<nav class="primary">
-<div class="bg-menu-select"></div>
-<a class="menu-select" href="#">Catalog</a>
-<div id = "navbar">
-<?php
-                    display_children(0,1);
-                    if(isset($_SESSION['isAdmin']))
-                    {
-                        if($_SESSION['isAdmin'] == 1)
-                        {
-                            ?>
-                            <ul>
-                            <li><a href="../admin">backend</a></li>
-                            <ul>
-                            <?php
-                        }
-                    }
-                   ?>
-                    
-</div>
-</nav><!-- .primary -->
-</div><!-- .grid_9 -->
-<p>
+                                <form class="search" action="../search.php">
+                                <input type="submit" class="search_button" value=""></a>
+                                <input type="text" name="search" class="search_form" value="" placeholder="Search entire store here...">
+                                </form><!-- .search -->
+                                </div><!-- .top_header -->
+                                </div><!-- .grid_9 -->
+                                <div class="grid_9 primary-box">
+                                <nav class="primary">
+                                <div class="bg-menu-select"></div>
+                                <a class="menu-select" href="#">Catalog</a>
+                                <div id = "navbar">
+                                <?php
+                                display_children(0,1);
+                                if(isset($_SESSION['isAdmin']))
+                                {
+                                    if($_SESSION['isAdmin'] == 1)
+                                    {
+                                        ?>
+                                        <ul>
+                                        <li><a href="../admin">backend</a></li>
+                                        <ul>
+                                        <?php
+                                    }
+                                }
+                                                           ?>
+                                                
+                            </div>
+                            </nav><!-- .primary -->
+                            </div><!-- .grid_9 -->
+                            <p>
                 <div class="breadcrumbs">
+            
             <script>
-                var path = "";
-                var href = document.location.href;
-                var s = href.split("/");
-                for (var i=2;i<(s.length-1);i++) {
-                path+="<A HREF=\""+href.substring(0,href.indexOf("/"+s[i])+s[i].length+1)+"/\">"+s[i]+"</A> <span></span> ";
-                }
-                i=s.length-1;
-                path+="<span class=\"current\" \">"+s[i]+"</span>";
-                var url =  "" + path;
-                document.writeln(url);
+            var path = "";
+            var href = document.location.href;
+            var s = href.split("/");
+            for (var i=2;i<(s.length-1);i++) {
+            path+="<A HREF=\""+href.substring(0,href.indexOf("/"+s[i])+s[i].length+1)+"/\">"+s[i]+"</A> <span></span> ";
+            }
+            i=s.length-1;
+            path+="<span class=\"current\" \">"+s[i]+"</span>";
+            var url =  "" + path;
+            document.writeln(url);
             </script>
                 </div>
 
@@ -168,20 +174,21 @@ $return_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUE
 </div>
 <div class="clear"></div>
 </header>
+
 <?php
 
 function display_children($parent, $level, $bool = null) {
 
     $database = new Queries();
     $result = $database->getChildren($parent);
-if($bool == null)
-{
-    echo "<ul class='parents'>";
-}
-else
-{
-    echo "<ul class='sub'>";
-}
+    if($bool == null)
+    {
+        echo "<ul class='parents'>";
+    }
+    else
+    {
+        echo "<ul class='sub'>";
+    }
  
 foreach($result as $menuitem)
     {

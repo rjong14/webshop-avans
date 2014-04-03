@@ -73,10 +73,5 @@ if(isset($_POST['add']))
   $description = $_POST['beschrijving'];
   $restult = $database->addOrder($user_id, $description, date("Y-m-d H:i:s"));
 }
-else
-
-{
-  echo "tsst";
-}
 include '../footer.php';
 ?>

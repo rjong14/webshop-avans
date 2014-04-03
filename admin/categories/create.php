@@ -43,8 +43,19 @@ $database = new Queries();
 if(isset($_POST['add']))
 {
 
-  $naam = $_POST['name'];
-  $restult = $database->addCategorie($naam);
+  if(isset($_POST['name']) && $_POST['name'] != "")
+  {
+    $naam = $_POST['name'];
+    $restult = $database->addCategorie($naam);
+  }
+  else
+  {
+    ?>
+    <script type="text/javascript">
+    alert('Vul alle velden in');
+    </script>
+    <?php
+  }
 }
 else
 

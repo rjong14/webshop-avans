@@ -29,7 +29,8 @@ $database = new Queries();
 								    <div class="list_body">
 									<form class="checkout_or" method="post">
 									    <h3>Checkout as a <?= $_SESSION['username'] ?></h3>
-									    
+									    <p> products : <?= getTotalItems() ?></p>
+                                        <p>Total price : € <?= getSessionTotal() ?></p>
 						<ul id="cart_nav" class="clearleft">
                         <li class="clearleft">
                             <ul class="cart_cont clearleft">
@@ -57,21 +58,12 @@ $database = new Queries();
                                         <?php
                                     }
                                 }
-                                else
-                                {
-                                    ?> 
-                                    <li class="no_border recently">Your shopping cart is empty</li>
-                                    <br>
-                                    <br>
-                                    <?php
-                                }
+                                
                                 ?>
                             </ul>
                         </li>
                     </ul><!-- .cart_nav -->
-
-									    <p> products : <?= getTotalItems() ?></p>
-									    <p>Total price : € <?= getSessionTotal() ?></p>
+                                        
 									    <input type="submit" id="checkout" name="checkout" value="checkout">
 									</form>
 									<div class="clear"></div>
@@ -94,7 +86,7 @@ if(isset($_POST['checkout']))
 
 	$database->addOrder($_SESSION['userid'], "Order voor " . $_SESSION['username'], date("Y-m-d H:i:s"));
 	$order_id = $database->getOrderLatestID();
-	$order_id = $order_id[0]['id'];
+    $order_id = $order_id[0]['id'];
 
 
 	foreach($_SESSION['products'] as $product)

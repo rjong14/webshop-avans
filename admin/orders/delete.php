@@ -1,4 +1,5 @@
 <?php
+include '../header.php';
 include '../../queries.php';
 $database = new Queries();
 $return_url = base64_decode($_GET["return_url"]); 

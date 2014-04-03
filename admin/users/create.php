@@ -95,16 +95,13 @@ if(isset($_POST['add']))
   }
   else
   {
-    echo '<script language="javascript">';
-    echo 'alert("De gebruikersnaam wordt al gebruikt")';
-    echo '</script>';
+    ?>
+    <script language="javascript">
+    alert("De gebruikersnaam wordt al gebruikt")
+    </script>
+    <?php
   }
 
-}
-else
-
-{
-  echo "tsst";
 }
 include '../footer.php';
 ?>

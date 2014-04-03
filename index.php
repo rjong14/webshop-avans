@@ -63,7 +63,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                                         €<?php echo $product['prPrijs'] ?>
                                   </div>
                                 </div>
-                                <span>Quantity</span> <input type="text" name="product_qty" style="width: 40px">
+                                <span>Quantity</span> <input type="text" value=1 name="product_qty" style="width: 40px">
 
                                  <input type="image" class="bay" src= "img/bg_cart.png" style="width:30px; height:30px;"/>
                                 
@@ -103,7 +103,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                                         €<?php echo $product['prPrijs'] ?>
                                   </div>
                                 </div>
-                                Quantity <input type="text" name="product_qty" style="width: 40px">
+                                Quantity <input type="text"  value=1 name="product_qty" style="width: 40px">
 
                                  <input type="image" class="bay" src= "img/bg_cart.png" style="width:30px; height:30px;"/>
                                 
@@ -150,7 +150,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
                                         €<?php echo $product['prPrijs'] ?>
                                   </div>
                                 </div>
-                                Quantity <input type="text" name="product_qty" style="width: 40px">
+                                Quantity <input type="text"  value=1 name="product_qty" style="width: 40px">
 
                                  <input type="image" class="bay" src= "img/bg_cart.png" style="width:30px; height:30px;"/>
                                 

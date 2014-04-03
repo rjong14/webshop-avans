@@ -22,6 +22,10 @@ class DB
 		//connectie sluiten
 		$this->conn->close();
 	}
+	public function getLastID()
+	{
+		$this->conn->insert_id;
+	}
 	
 	public function prepareStatement($stmt, $params)
 	{

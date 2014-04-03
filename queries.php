@@ -34,7 +34,7 @@
 		}
 		public function getOrderLatestID()
 		{
-			$result = $this->getInstance()->selectQuery("SELECT id from orders order by id desc limit 1", null);
+			$result = $this->getInstance()->selectQuery("SELECT * from orders order by id desc limit 1");
 			return $result;
 		}
 
@@ -177,6 +177,7 @@
 		public function insertUser($username, $password, $firstname, $lastname, $adress, $city, $zip, $email)
 		{
 
+			mysqli_report(MYSQLI_REPORT_ALL);
 			$result = $this->getInstance()->executeQuery("INSERT INTO  'webshop'.gebruikers (id ,gebruikersnaam ,wachtwoord ,voornaam ,achternaam ,adres ,woonplaats ,postcode ,email ,isAdmin)
 			VALUES (NULL ,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  ?,  '0');", array($username, $password, $firstname, $lastname, $adress, $city, $zip, $email));
 			return $result;

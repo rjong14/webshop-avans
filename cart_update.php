@@ -5,14 +5,14 @@ $database = new Queries();
 
 if(isset($_POST["type"]) && $_POST["type"]=='add')
 {
-	$product_id 	= filter_var($_POST["product_id"], FILTER_SANITIZE_STRING);
+	$product_id 	= filter_var($_POST["product_id"], FILTER_SANITIZE_NUMBER_INT);
 	$product_qty 	= filter_var($_POST["product_qty"], FILTER_SANITIZE_NUMBER_INT); 
 	$return_url 	= base64_decode($_POST["return_url"]); 
 	$productInfo 	= $database->getProductInfo($product_id);
 
 	if($productInfo != false)
 	{
-		$new_product = array(array('id'=>$product_id, 'name'=>$productInfo[0]['prNaam'], 'description'=>$productInfo[0]['prBeschrijving'], 'image'=>$productInfo[0]['prImage'], 'category'=>$productInfo[0]['naam'],  'qty'=>$product_qty, 'price'=>$productInfo[0]['prPrijs']));
+		$new_product = array(array('id'=>$product_id, 'name'=>$productInfo[0]['prNaam'], 'description'=>$productInfo[0]['prBeschrijving'], 'image'=>$productInfo[0]['prImage'], 'category'=>$productInfo[0]['naam'], 'isurl'=>$productInfo[0]['isURL'], 'qty'=>$product_qty, 'price'=>$productInfo[0]['prPrijs']));
 		if(isset($_SESSION["products"])) 
 		{
 			$found = false;
@@ -22,12 +22,12 @@ if(isset($_POST["type"]) && $_POST["type"]=='add')
 				
 				if($game['id'] == $product_id)
 				{
-					$product[] = array('id'=>$game['id'], 'name'=>$game['name'], 'description'=>$game['description'], 'image'=>$game['image'], 'category'=>$game['category'],  'qty'=>$product_qty, 'price'=>$game['price']);
+					$product[] = array('id'=>$game['id'], 'name'=>$game['name'], 'description'=>$game['description'], 'isurl'=>$game['isurl'], 'image'=>$game['image'], 'category'=>$game['category'],  'qty'=>$product_qty, 'price'=>$game['price']);
 					$found = true;
 				}
 				else
 				{
-					$product[] = array('id'=>$game['id'], 'name'=>$game['name'], 'description'=>$game['description'], 'image'=>$game['image'], 'category'=>$game['category'],  'qty'=>$game['qty'], 'price'=>$game['price']);
+					$product[] = array('id'=>$game['id'], 'name'=>$game['name'], 'description'=>$game['description'], 'isurl'=>$game['isurl'], 'image'=>$game['image'], 'category'=>$game['category'],  'qty'=>$game['qty'], 'price'=>$game['price']);
 				}
 			}
 

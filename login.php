@@ -53,32 +53,34 @@ $database = new Queries();
 					<?php 
 					if(!isset($_SESSION['username']))
 					{
-                    echo '<div class="grid_6 registed_form">
-			<form class="registed" action ="login.php"method="post">
-			    <h2>Registed Customers</h2>
-			    <p>If you have an account with us, please log in.</p>
-			    <div class="text">
-				<strong>Username:</strong><sup>*</sup><br>
-				<input type="text" name="username" class="" value="">
-			    </div><!-- .email -->
-			    <div class="password">
-				<strong>Password:</strong><sup>*</sup><br>
-				<input type="password" class = "text" name="password" class="" value="">
-			    </div><!-- .password -->
-			    <div class="remember">
-				<input class="niceCheck" type="checkbox" name="Remember_password">
-				<span class="rem">Remember password</span>
-			    </div><!-- .remember -->
-			    <div class="submit">										
-				<input type="submit" name="login" value="Login">
-                                <a class="forgot" href="#">Forgot Your Password?</a>
-				<span>* Required Field</span>
-                                <div class="clear"></div>
-			    </div><!-- .submit -->
-			</form><!-- .registed -->
-                    </div><!-- .grid_6 -->';
+						?>
+                    	<div class="grid_6 registed_form">
+						<form class="registed" action ="login.php"method="post">
+					    <h2>Registed Customers</h2>
+					    <p>If you have an account with us, please log in.</p>
+					    <div class="text">
+						<strong>Username:</strong><sup>*</sup><br>
+						<input type="text" name="username" class="" value="">
+					    </div><!-- .email -->
+					    <div class="password">
+						<strong>Password:</strong><sup>*</sup><br>
+						<input type="password" class = "text" name="password" class="" value="">
+					    </div><!-- .password -->
+					    <div class="remember">
+						<input class="niceCheck" type="checkbox" name="Remember_password">
+						<span class="rem">Remember password</span>
+					    </div><!-- .remember -->
+					    <div class="submit">										
+						<input type="submit" name="login" value="Login">
+		                                <a class="forgot" href="#">Forgot Your Password?</a>
+						<span>* Required Field</span>
+		                                <div class="clear"></div>
+					    </div><!-- .submit -->
+					</form><!-- .registed -->
+		                    </div><!-- .grid_6 -->
+		               <?php
                 }
-                    ?>
+                   ?>
 
 		</article>
                     
@@ -96,26 +98,44 @@ if(isset($_POST['login']))
 	if(isset($_POST['password']) && isset($_POST['username']))
 	{
 
-		$login = $database->checkLogin($_POST['username'], $_POST['password']);
-		if($login != false)
+		if($_POST['password'] != "" && $_POST['username'] != "")
 		{
-			$_SESSION['username'] = $login[0]['gebruikersnaam'];
-			$_SESSION['userid'] = $login[0]['id'];
-			if($login[0]['isAdmin'] == 1)
-			{
+				$login = $database->checkLogin($_POST['username'], $_POST['password']);
+				if($login != false)
+				{
+					$_SESSION['username'] = $login[0]['gebruikersnaam'];
+					$_SESSION['userid'] = $login[0]['id'];
+					if($login[0]['isAdmin'] == 1)
+					{
 
-				$_SESSION['isAdmin'] = 1;
-			}
-			else
-			{
-				$_SESSION['isAdmin'] = 0;
-			}
-			echo '<script>
-				  location.reload();
-				  </script>';
-
+						$_SESSION['isAdmin'] = 1;
+					}
+					else
+					{
+						$_SESSION['isAdmin'] = 0;
+					}
+					echo '<script>
+						  location.reload();
+						  </script>';
+				}
+				else 
+				{
+						?>
+						<script type="text/javascript">
+						alert("Deze gebruikersnaam bestaat al");
+						</script>
+						<?php
+				}
 		}
-		
+		else
+		{
+			?>
+			<script type="text/javascript">
+			alert("Vul alle velden in");
+			</script>
+			<?php
+		}
+
 	}
 }
 if(isset($_POST['logout']))

@@ -47,15 +47,26 @@ if(isset($_GET['name'])) {
 
 if(isset($_POST['edit']))
 {
+  if(isset($_POST['name']) && $_POST['name'] != "")
+  {
 
-  $naam = $_POST['name'];
-  $restult = $database->editCategorie($categorie_id, $naam);
-  ?>
-  <script type="text/javascript">
-  var newLocation = "<?php echo base64_decode($current_url); ?>";
-  window.location = newLocation;
-  </script>
-  <?php
+      $naam = $_POST['name'];
+      $restult = $database->editCategorie($categorie_id, $naam);
+      ?>
+      <script type="text/javascript">
+      var newLocation = "<?php echo base64_decode($current_url); ?>";
+      window.location = newLocation;
+      </script>
+      <?php
+   }
+   else
+   {
+      ?>
+        <script type="text/javascript">
+        alert('Vul alle velden in');
+        </script>
+      <?php 
+   }
 }
 include '../footer.php';
 ?>

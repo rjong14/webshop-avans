@@ -71,23 +71,36 @@ function do_alert($msg)
 <?php
 if(isset($_POST['register']))
 {
-	$result = $database->checkUsername($_POST['username']);
-	if($result == false)
-	{
-		$query = $database->insertUser($_POST['username'], $_POST['password'], $_POST['firstname'], $_POST['lastname'], $_POST['adress'], $_POST['city'], $_POST['zip'], $_POST['email']);
-		if($query != false)
-		{
-			$_SESSION['username'] = $_POST['username'];
-			echo '<script>
-		  		  location.reload();
-		  	     </script>';
+	
 
+		$result = $database->checkUsername($_POST['username']);
+		if($result == false)
+		{
+			  $nickname = $_POST['username'];
+		      $wachtwoord = $_POST['password'];
+		      $naam = $_POST['firstname'];
+		      $achternaam = $_POST['lastname'];
+		      $adres = $_POST['adress'];
+		      $woonplaats = $_POST['city'];
+		      $postcode = $_POST['zip'];
+		      $email =  $_POST['email'];
+		      $isAdmin = 0;
+
+			$query = $database->addUser($nickname, $wachtwoord, $naam, $achternaam, $adres, $woonplaats, $postcode, $email, $isAdmin);
+			if($query != false)
+			{
+		
+				$_SESSION['username'] = $_POST['username'];
+				echo '<script>
+			  		  location.reload();
+			  	     </script>';
+
+			}
 		}
-	}
-	else
-	{	
-		do_alert("The username already exist");
-	}
+		else
+		{	
+			do_alert("The username already exist");
+		}
 	
 }
 include 'footer.php';

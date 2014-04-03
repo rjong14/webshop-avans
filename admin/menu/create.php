@@ -73,9 +73,5 @@ if(isset($_POST['add']))
   $parent = $_POST['parent'];
   $result = $database->AddItem($label, $link, $parent);
 }
-else
-{
-  echo "tsst";
-}
 include '../footer.php';
 ?>

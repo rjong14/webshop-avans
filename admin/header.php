@@ -58,7 +58,3 @@ if(isset($_SESSION['isAdmin']))
     </div>
 
     
-
-    <script src="jquery/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>

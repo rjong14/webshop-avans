@@ -49,7 +49,7 @@ $current_url = base64_encode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQU
 		                    	€ <?php echo $product['prPrijs'] ?>
 					    		</div>
 					    		
-					    		Quantity <input type="text" name="product_qty" style="width: 40px">
+					    		Quantity <input type="text" name="product_qty" value=1 style="width: 40px">
 					    		<div class="cart">
 
 					   			 <button class="add_to_cart">Add To Cart</button>
